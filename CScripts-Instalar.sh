@@ -6,12 +6,18 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 #----------------------------------------------------
-#  Script de NiPeGun para sincronizar los c-scripts
+#  Script de NiPeGun para instalar los c-scripts
 #----------------------------------------------------
 
 ColorRojo='\033[1;31m'
 ColorVerde='\033[1;32m'
 FinColor='\033[0m'
+
+echo ""
+echo -e "${ColorVerde}----------------------------------------------------------------------------------${FinColor}"
+echo -e "${ColorVerde}  Iniciando el script de instalción de los c-scripts para el usuario $USER...${FinColor}"
+echo -e "${ColorVerde}----------------------------------------------------------------------------------${FinColor}"
+echo ""
 
 CarpetaInst="$HOME"
 
@@ -35,7 +41,7 @@ CarpetaInst="$HOME"
      if [[ $? -eq 0 ]]; then
        echo ""
        echo "---------------------------------------------------------"
-       echo -e "  ${ColorVerde}Sincronizando los c-scripts con las últimas versiones${FinColor}"
+       echo -e "  ${ColorVerde}Instalando los c-scripts con las últimas versiones${FinColor}"
        echo -e "  ${ColorVerde} y descargando nuevos c-scripts si es que existen...${FinColor}"
        echo "---------------------------------------------------------"
        echo ""
