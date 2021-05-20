@@ -95,7 +95,7 @@ git clone https://github.com/swar/Swar-Chia-Plot-Manager
    source $CarpetaHome/PythonVE-SCPM/bin/activate
 
 ## Instalar los requisitos
-   pip install -r $CarpetaHome/Swar-Chia-Plot-Manager/requirements.txt
+   # pip install -r $CarpetaHome/Swar-Chia-Plot-Manager/requirements.txt
 
 ## Correr el programa
     python3 manager.py start
