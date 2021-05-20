@@ -24,30 +24,27 @@
 mkdir $CarpetaHome/SoftInst/
 cd $CarpetaHome/SoftInst/
 
-# Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
-if [[ $(dpkg-query -s git 2>/dev/null | grep installed) == "" ]]; then
-    echo ""
-    echo "git no está instalado. Iniciando su instalación..."
-    echo ""
-    su root -c "apt-get -y update"
-    su root -c "apt-get -y install git"
-fi
-
-echo ""
-echo "  Clonando el repositorio..."
-echo ""
-git clone https://github.com/swar/Swar-Chia-Plot-Manager
+## Clonar el repositorio
+   echo ""
+   echo "  Clonando el repositorio..."
+   echo ""
+   # Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
+      if [[ $(dpkg-query -s git 2>/dev/null | grep installed) == "" ]]; then
+        echo ""
+        echo "git no está instalado. Iniciando su instalación..."
+        echo ""
+        su root -c "apt-get -y update"
+        su root -c "apt-get -y install git"
+      fi
+   git clone https://github.com/swar/Swar-Chia-Plot-Manager
 
 ## Crear el archivo de configuración
    cp $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml.default $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
-
-## Modificar el archivo de configuración
    sed -i -e 's|chia_location:|chia_location:'$CarpetaHome'/CoresCripto/XCH/bin/resources/app.asar.unpacked/daemon/chia|g' $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
    sed -i -e 's|folder_path: S:\\Chia\\Logs\\Plotter|folder_path: '$CarpetaHome'/Chia/Logs/|g'                             $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
    sed -i -e 's|max_concurrent: 10|max_concurrent: 6|g'                                                                    $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
    sed -i -e 's|max_for_phase_1: 3|max_for_phase_1: 5|g'                                                                   $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
-   ## Borrar todos los trabajos
-      sed -i -e '/- name: micron/,$d'                                                                                      $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   sed -i -e '/- name: micron/,$d'                                                                                         $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
    echo ""                                                                                                              >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
    echo "-name: default-home"                                                                                           >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
    echo "  max_plots: 100"                                                                                              >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
@@ -79,16 +76,12 @@ git clone https://github.com/swar/Swar-Chia-Plot-Manager
 ## Mover el software a la carpeta home del usuario
    mv $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/ $CarpetaHome/Swar-Chia-Plot-Manager/
 
-## Comprobar si el paquete python3.7 está instalado. Si no lo está, instalarlo.
-   if [[ $(dpkg-query -s python3.7 2>/dev/null | grep installed) == "" ]]; then
-       echo ""
-       echo "python3.7 no está instalado. Iniciando su instalación..."
-       echo ""
-       su root -c "apt-get -y update"
-       su root -c "apt-get -y install python3.7"
-   fi
-
-## Comprobar si el paquete python3-venv está instalado. Si no lo está, instalarlo.
+## Preparar el ambiente virtual
+   echo ""
+   echo "  Creando el ambiente virtual para Python..."
+   echo ""
+   cd $CarpetaHome/
+   ## Comprobar si el paquete python3-venv está instalado. Si no lo está, instalarlo.
    if [[ $(dpkg-query -s python3-venv 2>/dev/null | grep installed) == "" ]]; then
        echo ""
        echo "python3-venv no está instalado. Iniciando su instalación..."
@@ -96,12 +89,6 @@ git clone https://github.com/swar/Swar-Chia-Plot-Manager
        su root -c "apt-get -y update"
        su root -c "apt-get -y install python3-venv"
    fi
-
-## Preparar el ambiente virtual
-   echo ""
-   echo "  Creando el ambiente virtual para Python..."
-   echo ""
-   cd $CarpetaHome/
    python3 -m venv PythonVE-SCPM
    echo ""
    echo "  Activando el ambiente virtual..."
