@@ -16,7 +16,15 @@ echo ""
 echo -e "${ColorVerde}Creando alias para los c-scripts...${FinColor}"
 echo ""
 
-ln -s /home/$USER/scripts/c-scripts/Discos-NVMe-Salud.sh              /root/$USER/scripts/c-scripts/Alias/dnvmes
+CarpetaInst="$HOME"
+
+## Ver si la variable de entorno HOME termina con una / 
+   if [[ "$CarpetaInst" == */ ]]; then
+     # Quitarle la /
+     CarpetaInst=${CarpetaInst%?}
+   fi
+
+ln -s $HOME/scripts/c-scripts/Discos-NVMe-Salud.sh              $HOME/scripts/c-scripts/Alias/dnvmes
 
 echo ""
 echo -e "${ColorVerde}Alias creados. Deberías poder ejecutar los c-scripts escribiendo el nombre de su alias.${FinColor}"
