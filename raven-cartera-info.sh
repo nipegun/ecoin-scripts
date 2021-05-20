@@ -10,5 +10,5 @@
 echo ""
 echo "  Mostrando info de la cartera Raven..."
 echo ""
-$CarpetaHome/CoresCrypto/RVN/bin/raven-cli getwalletinfo | jq
+$CarpetaHome/CoresCripto/RVN/bin/raven-cli getwalletinfo | jq
 
