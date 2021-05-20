@@ -109,6 +109,7 @@ cd $CarpetaHome/SoftInst/
           su root -c "apt-get -y install python3-pip"
       fi
       #which pip
+      #pip install wheel
       #pip install -r $CarpetaHome/Swar-Chia-Plot-Manager/requirements.txt
 
 ## Correr el programa
