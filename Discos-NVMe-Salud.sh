@@ -9,6 +9,15 @@
 #  Script de NiPeGun para comprobar el estado de salud de los discos duros NVMe
 #--------------------------------------------------------------------------------
 
+## Comprobar si el paquete nvme está instalado. Si no lo está, instalarlo.
+   if [[ $(dpkg-query -s nvme 2>/dev/null | grep installed) == "" ]]; then
+       echo ""
+       echo "nvme no está instalado. Iniciando su instalación..."
+       echo ""
+       su root -c "apt-get -y update"
+       su root -c "apt-get -y install wget"
+   fi
+
 ## Obtener la cantidad de discos NVMe que hay instalados en el sistema
    for NroDiscoNVMe in {0..100}
      do
