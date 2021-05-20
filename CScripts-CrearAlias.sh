@@ -16,9 +16,8 @@ echo ""
 echo -e "${ColorVerde}Creando alias para los c-scripts...${FinColor}"
 echo ""
 
-CarpetaInst="$HOME"
-
-## Ver si la variable de entorno HOME termina con una / 
+## Ver si la variable de entorno HOME termina con una /
+   CarpetaInst="$HOME"
    if [[ "$CarpetaInst" == */ ]]; then
      # Quitarle la /
      CarpetaInst=${CarpetaInst%?}
