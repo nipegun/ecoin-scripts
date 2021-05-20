@@ -120,6 +120,7 @@ cd $CarpetaHome/SoftInst/
 apt-get -y install python3-dev python3-pip python3-venv python3-wheel
 
 cd /root
+git clone https://github.com/swar/Swar-Chia-Plot-Manager
 pip3 install virtualenv
 python3 -m venv swar
 source /root/swar/bin/activate
@@ -128,8 +129,40 @@ source /root/swar/bin/activate
 pip3 install wheel
 pip3 install -r /root/Swar-Chia-Plot-Manager/requirements.txt
 
-# Ejecutar
+# Conf
 cd /root/Swar-Chia-Plot-Manager/
+cp /root/Swar-Chia-Plot-Manager/config.yaml.default /root/Swar-Chia-Plot-Manager/config.yaml
+sed -i -e 's|chia_location:|chia_location:/root/CoresCripto/XCH/bin/resources/app.asar.unpacked/daemon/chia|g' /root/Swar-Chia-Plot-Manager/config.yaml
+   sed -i -e 's|folder_path: S:\\Chia\\Logs\\Plotter|folder_path: /root/Chia/Logs/|g'                          /root/Swar-Chia-Plot-Manager/config.yaml
+   sed -i -e 's|max_concurrent: 10|max_concurrent: 6|g'                                                        /root/Swar-Chia-Plot-Manager/config.yaml
+   sed -i -e 's|max_for_phase_1: 3|max_for_phase_1: 5|g'                                                       /root/Swar-Chia-Plot-Manager/config.yaml
+   sed -i -e '/- name: micron/,$d'                                                                             /root/Swar-Chia-Plot-Manager/config.yaml
+   echo ""                                                                                                              >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "-name: default-home"                                                                                           >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  max_plots: 100"                                                                                              >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  temporary_directory: "$CarpetaHome"/Chia/Siembras"                                                           >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  destination_directory: "$CarpetaHome"/Chia/Parcelas"                                                         >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  size: 32"                                                                                                    >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  bitfield: true"                                                                                              >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  threads: 3"                                                                                                  >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  buckets: 128"                                                                                                >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  memory_buffer: 4192"                                                                                         >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  max_concurrent: 5"                                                                                           >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  max_concurrent_with_start_early: 5"                                                                          >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  initial_delay_minutes: 0"                                                                                    >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  stagger_minutes: 5"                                                                                          >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  max_for_phase_1: 5"                                                                                          >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  concurrency_start_early_phase: 4"                                                                            >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  concurrency_start_early_phase_delay: 5"                                                                      >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  temporary2_destination_sync: false"                                                                          >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  exclude_final_directory: false"                                                                              >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  skip_full_destinations: true"                                                                                >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  unix_process_priority: 10"                                                                                   >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  windows_process_priority: 32"                                                                                >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  enable_cpu_affinity: false"                                                                                  >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   echo "  cpu_affinity: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]"                                          >> $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+
+# Ejecutar
 python3 manager.py start
 
 
