@@ -90,16 +90,16 @@ cd $CarpetaHome/SoftInst/
        su root -c "apt-get -y install python3-venv"
    fi
    python3 -m venv PythonVE-SCPM
-   #echo ""
-   #echo "  Activando el ambiente virtual..."
-   #echo ""
+   echo ""
+   echo "  Activando el ambiente virtual..."
+   echo ""
    #. $CarpetaHome/PythonVE-SCPM/bin/activate
-   #source $CarpetaHome/PythonVE-SCPM/bin/activate
+   source $CarpetaHome/PythonVE-SCPM/bin/activate
 
 ## Instalar los requisitos en el ambiente virtual
-   #echo ""
-   #echo "  Instalando los requisitos dentro del ambiente virtual..."
-   #echo ""
+   echo ""
+   echo "  Instalando los requisitos dentro del ambiente virtual..."
+   echo ""
    ## Comprobar si el paquete python3-pip está instalado. Si no lo está, instalarlo.
       if [[ $(dpkg-query -s python3-pip 2>/dev/null | grep installed) == "" ]]; then
           echo ""
@@ -108,11 +108,11 @@ cd $CarpetaHome/SoftInst/
           su root -c "apt-get -y update"
           su root -c "apt-get -y install python3-pip"
       fi
-      #which pip
-      #pip install wheel
-      #pip install -r $CarpetaHome/Swar-Chia-Plot-Manager/requirements.txt
+      which pip
+      pip install wheel
+      pip install -r $CarpetaHome/Swar-Chia-Plot-Manager/requirements.txt
 
 ## Correr el programa
-    #python3 $CarpetaHome/Swar-Chia-Plot-Manager/manager.py start
-    #python3 $CarpetaHome/Swar-Chia-Plot-Manager/manager.py view
+    python3 $CarpetaHome/Swar-Chia-Plot-Manager/manager.py start
+    python3 $CarpetaHome/Swar-Chia-Plot-Manager/manager.py view
 
