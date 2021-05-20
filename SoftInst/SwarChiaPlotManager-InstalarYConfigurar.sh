@@ -93,3 +93,8 @@ echo "  unix_process_priority: 10"                                          >> $
 echo "  windows_process_priority: 32"                                       >> $CarpetaHome/Swar-Chia-Plot-Manager/config.yaml
 echo "  enable_cpu_affinity: false"                                         >> $CarpetaHome/Swar-Chia-Plot-Manager/config.yaml
 echo "  cpu_affinity: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]" >> $CarpetaHome/Swar-Chia-Plot-Manager/config.yaml
+
+## Correr el programa
+    python3 manager.py start
+    python3 manager.py view
+
