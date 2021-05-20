@@ -114,5 +114,22 @@ cd $CarpetaHome/SoftInst/
 
 ## Correr el programa
     python3 $CarpetaHome/Swar-Chia-Plot-Manager/manager.py start
-    python3 $CarpetaHome/Swar-Chia-Plot-Manager/manager.py view
+    python3 $CarpetaHome/Chia-Swar-Plot-Manager/manager.py view
+
+#########################
+apt-get -y install python3-dev python3-pip python3-venv python3-wheel
+
+cd /root
+pip3 install virtualenv
+python3 -m venv swar
+source /root/swar/bin/activate
+
+# Inside virtual environment
+pip3 install wheel
+pip3 install -r /root/Swar-Chia-Plot-Manager/requirements.txt
+
+# Ejecutar
+cd /root/Swar-Chia-Plot-Manager/
+python3 manager.py start
+
 
