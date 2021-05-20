@@ -16,6 +16,11 @@
      CarpetaHome=${CarpetaHome%?}
    fi
 
+## Borrar datos de instalaciones anteriores
+   rm -rf $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager
+   rm -rf $CarpetaHome/Swar-Chia-Plot-Manager
+   rm -rf $CarpetaHome/PythonVE-SCPM/
+
 mkdir $CarpetaHome/SoftInst/
 cd $CarpetaHome/SoftInst/
 
@@ -92,26 +97,22 @@ git clone https://github.com/swar/Swar-Chia-Plot-Manager
        su root -c "apt-get -y install python3-venv"
    fi
 
-## Crear el ambiente virtual
+## Preparar el ambiente virtual
    echo ""
    echo "  Creando el ambiente virtual para Python..."
    echo ""
    cd $CarpetaHome/
    python3 -m venv PythonVE-SCPM
-
-echo ""
-echo "  Activando el ambiente virtual..."
    echo ""
-
-    . "$CarpetaHome/PythonVE-SCPM/bin/activate"
-    echo $CarpetaHome
-   #source $CarpetaHome/PythonVE-SCPM/bin/activate
-
-## Instalar los requisitos
+   echo "  Activando el ambiente virtual..."
+   echo ""
+   #. $CarpetaHome/PythonVE-SCPM/bin/activate
+   source $CarpetaHome/PythonVE-SCPM/bin/activate
    echo ""
    echo "  Instalando los requisitos dentro del ambiente virtual..."
    echo ""
-   #pip install -r $CarpetaHome/Swar-Chia-Plot-Manager/requirements.txt
+   which pip
+   pip install -r $CarpetaHome/Swar-Chia-Plot-Manager/requirements.txt
 
 ## Correr el programa
     python3 $CarpetaHome/Swar-Chia-Plot-Manager/manager.py start
