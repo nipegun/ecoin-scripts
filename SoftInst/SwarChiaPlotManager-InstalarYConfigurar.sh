@@ -111,6 +111,6 @@ git clone https://github.com/swar/Swar-Chia-Plot-Manager
    #pip install -r $CarpetaHome/Swar-Chia-Plot-Manager/requirements.txt
 
 ## Correr el programa
-    python3 manager.py start
-    python3 manager.py view
+    python3 $CarpetaHome/Swar-Chia-Plot-Manager/manager.py start
+    python3 $CarpetaHome/Swar-Chia-Plot-Manager/manager.py view
 
