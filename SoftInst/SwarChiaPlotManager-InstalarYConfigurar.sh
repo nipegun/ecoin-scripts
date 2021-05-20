@@ -90,9 +90,9 @@ git clone https://github.com/swar/Swar-Chia-Plot-Manager
    fi
 
 ## Crear el ambiente virtual
-   cd $CarpetaHome/Swar-Chia-Plot-Manager/
+   cd $CarpetaHome/
    python3 -m venv PythonVE-SCPM
-   source $CarpetaHome/Swar-Chia-Plot-Manager/PythonVE-SCPM/bin/activate
+   source $CarpetaHome/PythonVE-SCPM/bin/activate
 
 ## Instalar los requisitos
    pip install -r $CarpetaHome/Swar-Chia-Plot-Manager/requirements.txt
