@@ -15,7 +15,7 @@
        echo "nvme no está instalado. Iniciando su instalación..."
        echo ""
        su root -c "apt-get -y update"
-       su root -c "apt-get -y install wget"
+       su root -c "apt-get -y install nvme"
    fi
 
 ## Obtener la cantidad de discos NVMe que hay instalados en el sistema
