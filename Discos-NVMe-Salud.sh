@@ -10,12 +10,12 @@
 #--------------------------------------------------------------------------------
 
 ## Comprobar si el paquete nvme está instalado. Si no lo está, instalarlo.
-   if [[ $(dpkg-query -s nvme 2>/dev/null | grep installed) == "" ]]; then
+   if [[ $(dpkg-query -s nvme-cli 2>/dev/null | grep installed) == "" ]]; then
        echo ""
-       echo "nvme no está instalado. Iniciando su instalación..."
+       echo "nvme-cli no está instalado. Iniciando su instalación..."
        echo ""
        su root -c "apt-get -y update"
-       su root -c "apt-get -y install nvme"
+       su root -c "apt-get -y install nvme-cli"
    fi
 
 ## Obtener la cantidad de discos NVMe que hay instalados en el sistema
