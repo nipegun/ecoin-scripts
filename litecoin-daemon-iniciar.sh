@@ -10,5 +10,5 @@
 echo ""
 echo "  Iniciando el daemon litecoind..."
 echo ""
-$CarpetaHome/CoresCrypto/LTC/bin/litecoind -daemon
+$CarpetaHome/CoresCripto/LTC/bin/litecoind -daemon
 
