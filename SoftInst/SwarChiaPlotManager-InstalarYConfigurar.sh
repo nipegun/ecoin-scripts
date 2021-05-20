@@ -28,6 +28,9 @@ if [[ $(dpkg-query -s git 2>/dev/null | grep installed) == "" ]]; then
     su root -c "apt-get -y install git"
 fi
 
+echo ""
+echo "  Clonando el repositorio..."
+echo ""
 git clone https://github.com/swar/Swar-Chia-Plot-Manager
 
 ## Crear el archivo de configuración
@@ -90,11 +93,20 @@ git clone https://github.com/swar/Swar-Chia-Plot-Manager
    fi
 
 ## Crear el ambiente virtual
+   echo ""
+   echo "Creando el ambiente virtual para Python"
+   echo ""
    cd $CarpetaHome/
    python3 -m venv PythonVE-SCPM
+   echo ""
+   echo " Activando el ambiente virtual..."
+   echo ""
    #source $CarpetaHome/PythonVE-SCPM/bin/activate
 
 ## Instalar los requisitos
+   echo ""
+   echo "Instalando los requisitos dentro del ambiente virtual..."
+   echo ""
    # pip install -r $CarpetaHome/Swar-Chia-Plot-Manager/requirements.txt
 
 ## Correr el programa
