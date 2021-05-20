@@ -12,5 +12,5 @@ echo "  Iniciando argentum-qt..."
 echo ""
 $CarpetaHome/scripts/c-scripts/argentum-daemon-parar.sh
 sleep 5
-$CarpetaHome/CoresCrypto/ARG/bin/argentum-qt
+$CarpetaHome/CoresCripto/ARG/bin/argentum-qt
 
