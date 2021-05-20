@@ -10,6 +10,6 @@
 echo ""
 echo "  Parando el daemon litecoind..."
 echo ""
-$CarpetaHome/CoresCrypto/LTC/bin/litecoin-cli stop
+$CarpetaHome/CoresCripto/LTC/bin/litecoin-cli stop
 
              
