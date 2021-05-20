@@ -12,5 +12,5 @@ echo "  Iniciando chia-blockchain..."
 echo ""
 $CarpetaHome/scripts/c-scripts/chia-daemon-parar.sh
 sleep 5
-$CarpetaHome/CoresCrypto/XCH/bin/chia-blockchain %U
+$CarpetaHome/CoresCripto/XCH/bin/chia-blockchain %U
 
