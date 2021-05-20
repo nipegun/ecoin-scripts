@@ -43,7 +43,7 @@ git clone https://github.com/swar/Swar-Chia-Plot-Manager
 
 ## Modificar el archivo de configuración
    sed -i -e 's|chia_location:|chia_location:'$CarpetaHome'/CoresCripto/XCH/bin/resources/app.asar.unpacked/daemon/chia|g' $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
-   sed -i -e 's|folder_path: S:\Chia\Logs\Plotter|folder_path: '$CarpetaHome'/Chia/Logs/|g'                                $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
+   sed -i -e 's|folder_path: S:\\Chia\\Logs\\Plotter|folder_path: '$CarpetaHome'/Chia/Logs/|g'                             $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
    sed -i -e 's|max_concurrent: 10|max_concurrent: 6|g'                                                                    $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
    sed -i -e 's|max_for_phase_1: 3|max_for_phase_1: 5|g'                                                                   $CarpetaHome/SoftInst/Swar-Chia-Plot-Manager/config.yaml
    ## Borrar todos los trabajos
