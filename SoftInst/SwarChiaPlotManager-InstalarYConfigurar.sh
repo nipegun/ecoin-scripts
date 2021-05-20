@@ -94,7 +94,7 @@ git clone https://github.com/swar/Swar-Chia-Plot-Manager
 
 ## Crear el ambiente virtual
    echo ""
-   echo "Creando el ambiente virtual para Python"
+   echo "  Creando el ambiente virtual para Python"
    echo ""
    cd $CarpetaHome/
    python3 -m venv PythonVE-SCPM
