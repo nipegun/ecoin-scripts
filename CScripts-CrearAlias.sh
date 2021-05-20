@@ -23,8 +23,9 @@ echo ""
      CarpetaInst=${CarpetaInst%?}
    fi
 
-ln -s $HOME/scripts/c-scripts/Discos-NVMe-Salud.sh              $HOME/scripts/c-scripts/Alias/dnvmes
+ln -s $CarpetaInst/scripts/c-scripts/Discos-NVMe-Salud.sh              $CarpetaInst/scripts/c-scripts/Alias/dnvmes
 
 echo ""
 echo -e "${ColorVerde}Alias creados. Deberías poder ejecutar los c-scripts escribiendo el nombre de su alias.${FinColor}"
 echo ""
+
