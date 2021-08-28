@@ -3,8 +3,6 @@
 Usuario=pooladmin
 Salto=%0A
 
-Usuario=pooladmin
-
 ltcHeaders=$(/home/pooladmin/Cryptos/LTC/bin/litecoin-cli getblockchaininfo | jq .headers)
  ltcBlocks=$(/home/pooladmin/Cryptos/LTC/bin/litecoin-cli getblockchaininfo | jq .blocks)
 rvnHeaders=$(/home/pooladmin/Cryptos/RVN/bin/raven-cli getblockchaininfo | jq .headers)
