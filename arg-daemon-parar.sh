@@ -19,5 +19,5 @@
 echo ""
 echo "  Parando el daemon argentumd..."
 echo ""
-$CarpetaHome/CoresCripto/ARG/bin/argentum-cli stop
+$CarpetaHome/Cryptos/ARG/bin/argentum-cli stop
 
