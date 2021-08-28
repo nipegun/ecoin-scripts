@@ -19,5 +19,5 @@
 echo ""
 echo "  Iniciando el daemon argentumd..."
 echo ""
-$CarpetaHome/CoresCripto/ARG/bin/argentumd
+$CarpetaHome/Cryptos/ARG/bin/argentumd
 
