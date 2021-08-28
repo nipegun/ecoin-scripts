@@ -19,7 +19,7 @@
 echo ""
 echo "  Iniciando monero-gui..."
 echo ""
-$CarpetaHome/scripts/c-scripts/monero-daemon-parar.sh
+$CarpetaHome/scripts/c-scripts/xmr-daemon-parar.sh
 sleep 5
-$CarpetaHome/CoresCripto/XMR/bin/monero-wallet-gui %u
+$CarpetaHome/Cryptos/XMR/bin/monero-wallet-gui %u
 
