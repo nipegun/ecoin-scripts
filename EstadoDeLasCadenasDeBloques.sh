@@ -27,3 +27,4 @@ argHeaders=$(/home/pooladmin/Cryptos/ARG/bin/argentum-cli getblockchaininfo | jq
 <i>Nodo Chia:</i>$Salto $Salto\
  Bloques totales: $argHeaders $Salto\
  Descargados: $argBlocks $Salto $Salto\
+
