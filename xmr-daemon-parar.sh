@@ -19,5 +19,5 @@
 echo ""
 echo "  Parando monerod..."
 echo ""
-$CarpetaHome/CoresCripto/XMR/bin/monerod stop_daemon
+$CarpetaHome/Cryptos/XMR/bin/monerod stop_daemon
 
