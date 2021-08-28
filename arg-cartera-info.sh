@@ -19,5 +19,5 @@
 echo ""
 echo "  Mostrando info de la cartera Argentum..."
 echo ""
-$CarpetaHome/CoresCripto/ARG/bin/argentum-cli getwalletinfo | jq
+$CarpetaHome/Cryptos/ARG/bin/argentum-cli getwalletinfo | jq
 
