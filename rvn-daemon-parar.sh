@@ -19,5 +19,5 @@
 echo ""
 echo "  Parando el daemon ravend..."
 echo ""
-$CarpetaHome/CoresCripto/RVN/bin/raven-cli stop
+$CarpetaHome/Cryptos/RVN/bin/raven-cli stop
 
