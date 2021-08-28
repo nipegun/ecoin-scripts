@@ -19,5 +19,5 @@
 echo ""
 echo "  Iniciando monerod..."
 echo ""
-$CarpetaHome/CoresCripto/XMR/bin/monerod --detach
+$CarpetaHome/Cryptos/XMR/bin/monerod --detach
 
