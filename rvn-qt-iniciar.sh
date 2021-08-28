@@ -19,7 +19,7 @@
 echo ""
 echo "  Iniciando raven-qt..."
 echo ""
-$CarpetaHome/scripts/c-scripts/raven-daemon-parar.sh
+$CarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh
 sleep 5
-/home/$UsuarioDaemon/CoresCripto/RVN/bin/raven-qt -min -testnet=0 -regtest=0
+$CarpetaHome/Cryptos/RVN/bin/raven-qt -min -testnet=0 -regtest=0
 
