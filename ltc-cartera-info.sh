@@ -19,5 +19,5 @@
 echo ""
 echo "  Mostrando info de la cartera Litecoin..."
 echo ""
-$CarpetaHome/CoresCripto/LTC/bin/litecoin-cli getwalletinfo | jq
+$CarpetaHome/Cryptos/LTC/bin/litecoin-cli getwalletinfo | jq
 
