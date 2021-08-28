@@ -19,5 +19,5 @@
 echo ""
 echo "  Iniciando el daemon ravend..."
 echo ""
-$CarpetaHome/CoresCripto/RVN/bin/ravend
+$CarpetaHome/Cryptos/RVN/bin/ravend
 
