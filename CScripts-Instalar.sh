@@ -7,6 +7,9 @@
 
 #----------------------------------------------------
 #  Script de NiPeGun para instalar los c-scripts
+#
+#  Ejecución remota:
+#  curl -s 
 #----------------------------------------------------
 
 ColorRojo='\033[1;31m'
