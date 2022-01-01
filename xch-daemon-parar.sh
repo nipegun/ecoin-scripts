@@ -19,5 +19,5 @@
 echo ""
 echo "  Parando el daemon ravend..."
 echo ""
-$CarpetaHome/Cryptos/XCH/chia-blockchain/chia-blockchain/resources/app.asar.unpacked/daemon/chia stop farmer
+$CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia stop farmer
 
