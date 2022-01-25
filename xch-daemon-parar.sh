@@ -17,7 +17,7 @@
    fi
 
 echo ""
-echo "  Parando el demonio de chia..."
+echo "  Parando el demonio de chia (si es que está activo)..."
 echo ""
 $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia stop farmer
 
