@@ -17,7 +17,7 @@
    fi
 
 echo ""
-echo "  Iniciando chia-light wallet..."
+echo "  Iniciando la wallet de chia..."
 echo ""
 $CarpetaHome/scripts/c-scripts/xch-daemon-parar.sh
 sleep 5
