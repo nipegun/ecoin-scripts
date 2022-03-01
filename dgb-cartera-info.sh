@@ -29,3 +29,4 @@ echo ""
      echo ""
    fi
 $CarpetaHome/Cryptos/RVN/bin/digibyte-cli getwalletinfo | jq
+
