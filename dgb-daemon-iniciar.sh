@@ -19,4 +19,5 @@
 echo ""
 echo "  Iniciando el daemon digibyted..."
 echo ""
-$CarpetaHome/Cryptos/DGB/bin/digibyted
+$CarpetaHome/Cryptos/DGB/bin/digibyted -daemon
+
