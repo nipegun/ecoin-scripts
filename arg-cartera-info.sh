@@ -19,5 +19,14 @@
 echo ""
 echo "  Mostrando info de la cartera Argentum..."
 echo ""
+## Comprobar si el paquete jq está instalado. Si no lo está, instalarlo.
+   if [[ $(dpkg-query -s jq 2>/dev/null | grep installed) == "" ]]; then
+     echo ""
+     echo "  jq no está instalado. Iniciando su instalación..."
+     echo ""
+     apt-get -y update
+     apt-get -y install jq
+     echo ""
+   fi
 $CarpetaHome/Cryptos/ARG/bin/argentum-cli getwalletinfo | jq
 
