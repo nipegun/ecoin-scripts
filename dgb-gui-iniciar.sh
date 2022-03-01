@@ -22,3 +22,4 @@ echo ""
 $CarpetaHome/scripts/c-scripts/dgb-daemon-parar.sh
 sleep 5
 $CarpetaHome/Cryptos/DGB/bin/digibyte-qt
+
