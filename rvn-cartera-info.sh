@@ -19,5 +19,10 @@
 echo ""
 echo "  Mostrando info de la cartera Raven..."
 echo ""
+## Comprobar si el paquete jq está instalado. Si no lo está, instalarlo.
+   if [[ $(dpkg-query -s jq 2>/dev/null | grep installed) == "" ]]; then
+     apt-get -y update      2> /dev/null
+     apt-get -y install jq  2> /dev/null
+   fi
 $CarpetaHome/Cryptos/RVN/bin/raven-cli getwalletinfo | jq
 
