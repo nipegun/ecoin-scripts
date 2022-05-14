@@ -19,4 +19,5 @@
 echo ""
 echo "  Mostrando el estado de las parcelas del nodo de Chia..."
 echo ""
-chia plots check
+$CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia plots check
+
