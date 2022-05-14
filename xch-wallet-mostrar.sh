@@ -17,7 +17,7 @@
    fi
 
 echo ""
-echo "  Estado del nodo de Chia..."
+echo "  Mostrando datos de la cartera de Chia..."
 echo ""
 $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia wallet show
 
