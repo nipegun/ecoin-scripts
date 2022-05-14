@@ -6,7 +6,7 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 #-------------------------------------------------------------
-#  Script de NiPeGun para mostrar el estado del nodo de Chia
+#  Script de NiPeGun para mostrar el estado de la red de Chia
 #-------------------------------------------------------------
 
 ## Ver si la variable de entorno HOME termina con una /
