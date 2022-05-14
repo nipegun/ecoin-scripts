@@ -5,9 +5,9 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
-#-------------------------------------------------------------
+# ----------
 #  Script de NiPeGun para mostrar el estado de la red de Chia
-#-------------------------------------------------------------
+# ----------
 
 ## Ver si la variable de entorno HOME termina con una /
    CarpetaHome="$HOME"
@@ -17,7 +17,7 @@
    fi
 
 echo ""
-echo "  Estado del nodo de Chia..."
+echo "  Mostrando estado de la red de Chia..."
 echo ""
 $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia netspace
 
