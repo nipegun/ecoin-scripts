@@ -43,5 +43,5 @@ FinColor='\033[0m'
   fi
 
 # Ejecutar la copia de seguridad
-  sqlite3 $vCarpetaUsuario/.chia/mainnet/db/blockchain_$vVersRedPrinc_mainnet.sqlite "vacuum into '$vCarpDestinoCopSeg/blockchain_$vVersRedPrinc_mainnet.sqlite'"
+  sqlite3 $vCarpetaUsuario/.chia/mainnet/db/blockchain_"$vVersRedPrinc"_mainnet.sqlite "vacuum into '$vCarpDestinoCopSeg/blockchain_$vVersRedPrinc_mainnet.sqlite'"
 
