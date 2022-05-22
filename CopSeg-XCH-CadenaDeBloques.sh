@@ -15,8 +15,13 @@ ColorRojo='\033[1;31m'
 ColorVerde='\033[1;32m'
 FinColor='\033[0m'
 
-vFechaCopia=
-vCarpetaUsuario=
+# Ver si la variable de entorno HOME termina con una /
+   vCarpetaUsuario="$HOME"
+   if [[ "$vCarpetaUsuario" == */ ]]; then
+     # Quitarle la /
+     vCarpetaUsuario=${CarpetaHome%?}
+   fi
+
 vUbicBD="$vCarpetaUsuario"
 vCarpDestinoCopSeg="/CopSeg/Chia/$vFechaCopia/.chia/mainnet/db"
 vVersRedPrinc=v2
@@ -32,5 +37,5 @@ mkdir -p $vCarpDestinoCopSeg 2> /dev/null
     echo ""
   fi
 
-sqlite3 $vCarpetaHome/.chia/mainnet/db/blockchain_$vVersRedPrinc_mainnet.sqlite "vacuum into '$vCarpDestinoCopSeg/blockchain_$vVersRedPrinc_mainnet.sqlite'"
+sqlite3 vCarpetaUsuario/.chia/mainnet/db/blockchain_$vVersRedPrinc_mainnet.sqlite "vacuum into '$vCarpDestinoCopSeg/blockchain_$vVersRedPrinc_mainnet.sqlite'"
 
