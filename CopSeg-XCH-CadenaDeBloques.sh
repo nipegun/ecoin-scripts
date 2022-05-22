@@ -15,17 +15,22 @@ ColorRojo='\033[1;31m'
 ColorVerde='\033[1;32m'
 FinColor='\033[0m'
 
-# Ver si la variable de entorno HOME termina con una /
-   vCarpetaUsuario="$HOME"
-   if [[ "$vCarpetaUsuario" == */ ]]; then
-     # Quitarle la /
-     vCarpetaUsuario=${CarpetaHome%?}
-   fi
+# Definir la carpeta de usuario
+  # Ver si la variable de entorno HOME termina con una /
+     vCarpetaUsuario="$HOME"
+     if [[ "$vCarpetaUsuario" == */ ]]; then
+       # Quitarle la /
+       vCarpetaUsuario=${vCarpetaUsuario%?}
+     fi
 
-vUbicBD="$vCarpetaUsuario"
-vCarpDestinoCopSeg="/CopSeg/Chia/$vFechaCopia/.chia/mainnet/db"
-vVersRedPrinc=v2
-mkdir -p $vCarpDestinoCopSeg 2> /dev/null
+# Definir la versión de la base de datos
+  vVersRedPrinc=v2
+
+# Definir la carpeta de destino
+  vCarpDestinoCopSeg="/CopSeg/Chia/$vFechaCopia/.chia/mainnet/db"
+
+# Crear la carpeta de destino, por las dudas
+  mkdir -p $vCarpDestinoCopSeg 2> /dev/null
 
 # Comprobar si el paquete sqlite3 está instalado. Si no lo está, instalarlo.
   if [[ $(dpkg-query -s sqlite3 2>/dev/null | grep installed) == "" ]]; then
@@ -37,5 +42,6 @@ mkdir -p $vCarpDestinoCopSeg 2> /dev/null
     echo ""
   fi
 
-sqlite3 vCarpetaUsuario/.chia/mainnet/db/blockchain_$vVersRedPrinc_mainnet.sqlite "vacuum into '$vCarpDestinoCopSeg/blockchain_$vVersRedPrinc_mainnet.sqlite'"
+# Ejecutar la copia de seguridad
+  sqlite3 $vCarpetaUsuario/.chia/mainnet/db/blockchain_$vVersRedPrinc_mainnet.sqlite "vacuum into '$vCarpDestinoCopSeg/blockchain_$vVersRedPrinc_mainnet.sqlite'"
 
