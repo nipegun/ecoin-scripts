@@ -4,12 +4,12 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
-#-------------------------------------------------------------------------------------------------
+# ----------
 #  Script de NiPeGun para hacer copia de seguridad de la cadena de bloques de chia
 #
 #  Ejecución remota:
-#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/CScripts-Sincronizar.sh | bash
-#-------------------------------------------------------------------------------------------------
+#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/CopSeg-XCH-CadenaDeBloques.sh | bash
+# ----------
 
 ColorRojo='\033[1;31m'
 ColorVerde='\033[1;32m'
@@ -27,13 +27,13 @@ vCarpDestinoCopSeg="/CopSeg/Chia/$vFechaCopia/.chia/mainnet/db"
 vVersRedPrinc=v2
 mkdir -p $vCarpDestinoCopSeg 2> /dev/null
 
-# Comprobar si el paquete sqlite está instalado. Si no lo está, instalarlo.
-  if [[ $(dpkg-query -s sqlite 2>/dev/null | grep installed) == "" ]]; then
+# Comprobar si el paquete sqlite3 está instalado. Si no lo está, instalarlo.
+  if [[ $(dpkg-query -s sqlite3 2>/dev/null | grep installed) == "" ]]; then
     echo ""
-    echo "  sqlite no está instalado. Iniciando su instalación..."
+    echo "  sqlite3 no está instalado. Iniciando su instalación..."
     echo ""
     apt-get -y update > /dev/null
-    apt-get -y install sqlite
+    apt-get -y install sqlite3
     echo ""
   fi
 
