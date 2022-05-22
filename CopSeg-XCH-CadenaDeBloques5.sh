@@ -32,6 +32,9 @@ FinColor='\033[0m'
 # Definir la carpeta de destino
   vCarpDestinoCopSeg="/CopSeg/Chia/$vFechaCopia/.chia/mainnet/db"
 
+# Definir la carpeta temporal
+  SQLITE_TMPDIR=/var/tmp/
+
 # Crear la carpeta de destino, por las dudas
   mkdir -p $vCarpDestinoCopSeg 2> /dev/null
 
