@@ -49,5 +49,5 @@ FinColor='\033[0m'
   echo ""
   echo "  Ejecutando copia de seguridad de la cadena de bloques de Chia..."
   echo ""
-  sqlite3 --verbose $vCarpetaUsuario/.chia/mainnet/db/blockchain_"$vVersRedPrinc"_mainnet.sqlite "vacuum into '$vCarpDestinoCopSeg/blockchain_"$vVersRedPrinc"_mainnet.sqlite'"
+  sqlite3 $vCarpetaUsuario/.chia/mainnet/db/blockchain_"$vVersRedPrinc"_mainnet.sqlite "vacuum into '$vCarpDestinoCopSeg/blockchain_"$vVersRedPrinc"_mainnet.sqlite'"
 
