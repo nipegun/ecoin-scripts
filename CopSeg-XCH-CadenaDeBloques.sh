@@ -27,7 +27,7 @@ FinColor='\033[0m'
   vVersRedPrinc=v2
 
 # Definir la fecha de la copia de seguridad
-  vFechaCopia=$(date +A%YM%mD%d@%T)
+  vFechaCopia=$(date +A%Y-M%m-D%d@%T)
 
 # Definir la carpeta de destino
   vCarpDestinoCopSeg="/CopSeg/Chia/$vFechaCopia/.chia/mainnet/db"
