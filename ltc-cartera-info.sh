@@ -9,20 +9,21 @@
 #  Script de NiPeGun para mostrar info sobre la cartera de litecoin
 #--------------------------------------------------------------------
 
-## Ver si la variable de entorno HOME termina con una /
-   CarpetaHome="$HOME"
-   if [[ "$CarpetaHome" == */ ]]; then
-     # Quitarle la /
-     CarpetaHome=${CarpetaHome%?}
-   fi
+# Ver si la variable de entorno HOME termina con una /
+  CarpetaHome="$HOME"
+  if [[ "$CarpetaHome" == */ ]]; then
+    # Quitarle la /
+      CarpetaHome=${CarpetaHome%?}
+  fi
 
 echo ""
 echo "  Mostrando info de la cartera Litecoin..."
 echo ""
-## Comprobar si el paquete jq está instalado. Si no lo está, instalarlo.
-   if [[ $(dpkg-query -s jq 2>/dev/null | grep installed) == "" ]]; then
-     apt-get -y update      2> /dev/null
-     apt-get -y install jq  2> /dev/null
-   fi
+# Comprobar si el paquete jq está instalado. Si no lo está, instalarlo.
+  if [[ $(dpkg-query -s jq 2>/dev/null | grep installed) == "" ]]; then
+    apt-get -y update      2> /dev/null
+    apt-get -y install jq  2> /dev/null
+  fi
+chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-cli 2> /dev/null
 $CarpetaHome/Cryptos/LTC/bin/litecoin-cli getwalletinfo | jq
 
