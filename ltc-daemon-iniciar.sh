@@ -19,5 +19,6 @@
 echo ""
 echo "  Iniciando el daemon litecoind..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoind 2> /dev/null
 $CarpetaHome/Cryptos/LTC/bin/litecoind -daemon
 
