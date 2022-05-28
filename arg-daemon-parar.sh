@@ -19,5 +19,6 @@
 echo ""
 echo "  Parando el daemon argentumd..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/ARG/bin/argentum-cli 2> /dev/null
 $CarpetaHome/Cryptos/ARG/bin/argentum-cli stop
 
