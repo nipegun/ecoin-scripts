@@ -19,5 +19,6 @@
 echo ""
 echo "  Mostrando el sumario de la granja de Chia..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia 2> /dev/null
 $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia farm summary
 
