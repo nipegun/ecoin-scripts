@@ -19,4 +19,6 @@
 echo ""
 echo "  Parando el daemon digibyted..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/DGB/bin/digibyte-cli 2> /dev/null
 $CarpetaHome/Cryptos/DGB/bin/digibyte-cli stop
+
