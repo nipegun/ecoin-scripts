@@ -19,5 +19,6 @@
 echo ""
 echo "  Parando el daemon litecoind..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-cli 2> /dev/null
 $CarpetaHome/Cryptos/LTC/bin/litecoin-cli stop
 
