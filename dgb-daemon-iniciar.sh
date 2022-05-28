@@ -19,5 +19,6 @@
 echo ""
 echo "  Iniciando el daemon digibyted..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/DGB/bin/digibyted 2> /dev/null
 $CarpetaHome/Cryptos/DGB/bin/digibyted -daemon
 
