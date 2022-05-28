@@ -19,7 +19,9 @@
 echo ""
 echo "  Iniciando argentum-qt..."
 echo ""
+chmod +x $CarpetaHome/scripts/c-scripts/arg-daemon-parar.sh 2> /dev/null
 $CarpetaHome/scripts/c-scripts/arg-daemon-parar.sh
 sleep 5
+chmod +x $CarpetaHome/Cryptos/ARG/bin/argentum-qt 2> /dev/null
 $CarpetaHome/Cryptos/ARG/bin/argentum-qt
 
