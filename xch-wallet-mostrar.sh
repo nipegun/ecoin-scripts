@@ -19,5 +19,6 @@
 echo ""
 echo "  Mostrando datos de la cartera de Chia..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia
 $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia wallet show
 
