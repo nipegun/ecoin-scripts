@@ -19,5 +19,6 @@
 echo ""
 echo "  Iniciando el daemon ravend..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/RVN/bin/ravend 2> /dev/null
 $CarpetaHome/Cryptos/RVN/bin/ravend
 
