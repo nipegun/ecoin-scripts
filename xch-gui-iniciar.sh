@@ -19,7 +19,9 @@
 echo ""
 echo "  Iniciando chia-blockchain..."
 echo ""
+chmod +x $CarpetaHome/scripts/c-scripts/xch-daemon-parar.sh 2> /dev/null
 $CarpetaHome/scripts/c-scripts/xch-daemon-parar.sh
 sleep 5
+chmod +x $CarpetaHome/Cryptos/XCH/chia-blockchain/chia-blockchain 2> /dev/null
 $CarpetaHome/Cryptos/XCH/chia-blockchain/chia-blockchain
 
