@@ -19,5 +19,6 @@
 echo ""
 echo "  Iniciando el daemon argentumd..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/ARG/bin/argentumd 2> /dev/null
 $CarpetaHome/Cryptos/ARG/bin/argentumd
 
