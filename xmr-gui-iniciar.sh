@@ -19,7 +19,9 @@
 echo ""
 echo "  Iniciando monero-gui..."
 echo ""
+chmod +x $CarpetaHome/scripts/c-scripts/xmr-daemon-parar.sh 2> /dev/null
 $CarpetaHome/scripts/c-scripts/xmr-daemon-parar.sh
 sleep 5
+chmod +x $CarpetaHome/Cryptos/XMR/bin/monero-wallet-gui 2> /dev/null
 $CarpetaHome/Cryptos/XMR/bin/monero-wallet-gui %u
 
