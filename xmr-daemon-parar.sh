@@ -19,5 +19,6 @@
 echo ""
 echo "  Parando monerod..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/XMR/bin/monerod 2> /dev/null
 $CarpetaHome/Cryptos/XMR/bin/monerod stop_daemon
 
