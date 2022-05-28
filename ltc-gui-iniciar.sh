@@ -19,7 +19,9 @@
 echo ""
 echo "  Iniciando litecoin-qt..."
 echo ""
+chmod +x $CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh 2> /dev/null
 $CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh
 sleep 5
+chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-qt 2> /dev/null
 $CarpetaHome/Cryptos/LTC/bin/litecoin-qt
 
