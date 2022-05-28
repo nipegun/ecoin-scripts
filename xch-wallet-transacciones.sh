@@ -19,5 +19,6 @@
 echo ""
 echo "  Mostrando transacciones de la wallet de chia..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia
 $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia wallet get_transactions --no-paginate
 
