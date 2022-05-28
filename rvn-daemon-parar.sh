@@ -19,5 +19,6 @@
 echo ""
 echo "  Parando el daemon ravend..."
 echo ""
+chmod +x $CarpetaHome/Cryptos/RVN/bin/raven-cli 2> /dev/null
 $CarpetaHome/Cryptos/RVN/bin/raven-cli stop
 
