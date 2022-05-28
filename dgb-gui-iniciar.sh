@@ -19,7 +19,9 @@
 echo ""
 echo "  Iniciando digibyte-qt..."
 echo ""
+chmod +x $CarpetaHome/scripts/c-scripts/dgb-daemon-parar.sh 2> /dev/null
 $CarpetaHome/scripts/c-scripts/dgb-daemon-parar.sh
 sleep 5
+chmod +x $CarpetaHome/Cryptos/DGB/bin/digibyte-qt 2> /dev/null
 $CarpetaHome/Cryptos/DGB/bin/digibyte-qt
 
