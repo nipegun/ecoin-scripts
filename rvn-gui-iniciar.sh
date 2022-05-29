@@ -22,6 +22,10 @@ echo ""
 chmod +x $CarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh 2> /dev/null
 $CarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh
 sleep 5
+
+chmod +x $CarpetaHome/Cryptos/RVN/bin/raven-cli 2> /dev/null
 chmod +x $CarpetaHome/Cryptos/RVN/bin/raven-qt 2> /dev/null
+chmod +x $CarpetaHome/Cryptos/RVN/bin/ravend 2> /dev/null
+chmod +x $CarpetaHome/Cryptos/RVN/bin/test_raven 2> /dev/null
 $CarpetaHome/Cryptos/RVN/bin/raven-qt -min -testnet=0 -regtest=0
 
