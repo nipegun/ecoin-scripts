@@ -22,6 +22,12 @@ echo ""
 chmod +x $CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh 2> /dev/null
 $CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh
 sleep 5
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-qt 2> /dev/null
+
+chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-cli    2> /dev/null
+chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-qt     2> /dev/null
+chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-tx     2> /dev/null
+chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-wallet 2> /dev/null
+chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoind       2> /dev/null
+chmod +x $CarpetaHome/Cryptos/LTC/bin/test_litecoin   2> /dev/null
 $CarpetaHome/Cryptos/LTC/bin/litecoin-qt
 
