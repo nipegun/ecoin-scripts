@@ -8,7 +8,7 @@
 #  Script de NiPeGun para hacer copia de seguridad de la cadena de bloques de chia
 #
 #  Ejecución remota:
-#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/CopSeg-XCH-CadenaDeBloques.sh | bash
+#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/xch-CopSeg-CadenaDeBloques-ConNodoEncendido.sh | bash
 # ----------
 
 ColorRojo='\033[1;31m'
