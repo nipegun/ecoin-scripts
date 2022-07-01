@@ -24,16 +24,16 @@ FinColor='\033[0m'
   fi
 
 # Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
-if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
+  if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
     echo ""
     echo "  wget no está instalado. Iniciando su instalación..."
     echo ""
     su root -c "apt-get -y update"
     su root -c "apt-get -y install wget"
-fi
+  fi
 
 # Comprobar si hay conexión a Internet antes de sincronizar los d-scripts
-wget -q --tries=10 --timeout=20 --spider https://github.com
+  wget -q --tries=10 --timeout=20 --spider https://github.com
   if [[ $? -eq 0 ]]; then
     echo ""
     echo "---------------------------------------------------------"
@@ -44,7 +44,7 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     rm $CarpetaHome/scripts/c-scripts -R 2> /dev/null
     mkdir $CarpetaHome/scripts 2> /dev/null
     cd $CarpetaHome/scripts
-    ## Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
+    # Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
       if [[ $(dpkg-query -s git 2>/dev/null | grep installed) == "" ]]; then
         echo ""
         echo "  git no está instalado. Iniciando su instalación..."
@@ -68,3 +68,4 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     echo -e "${ColorRojo}  No se pudo iniciar la sincronización de los c-scripts porque no se detectó conexión a Internet.${FinColor}"
     echo ""
   fi
+
