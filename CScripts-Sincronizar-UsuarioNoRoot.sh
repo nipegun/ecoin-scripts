@@ -9,7 +9,7 @@
 #  Script de NiPeGun para sincronizar los c-scripts
 #
 #  Ejecución remota:
-#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/CScripts-SincronizarUsuarioNoRoot.sh | bash
+#  https://raw.githubusercontent.com/nipegun/c-scripts/main/CScripts-Sincronizar-UsuarioNoRoot.sh | bash
 # ----------
 
 ColorRojo='\033[1;31m'
