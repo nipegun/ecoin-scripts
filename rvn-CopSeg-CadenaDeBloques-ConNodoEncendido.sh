@@ -17,17 +17,25 @@ ColorVerde='\033[1;32m'
 FinColor='\033[0m'
 
 vFechaDeEjecCopSeg=$(date +A%Y-M%m-D%d@%T)
+vCarpetaCopSeg="/CopSegInt"
 
-Usuario="nipegun"
-CarpetaBD1="/home/$Usuario/.raven/blocks/"
-CarpetaBD2="/home/$Usuario/.raven/chainstate/"
+# Definir la carpeta de usuario
+  # Ver si la variable de entorno HOME termina con una /
+     vCarpetaUsuario="$HOME"
+     if [[ "$vCarpetaUsuario" == */ ]]; then
+       # Quitarle la /
+       vCarpetaUsuario=${vCarpetaUsuario%?}
+     fi
+
+CarpetaBD1="/home/$vCarpetaUsuario/.raven/blocks/"
+CarpetaBD2="/home/$vCarpetaUsuario/.raven/chainstate/"
 
 echo ""
 echo -e "${ColorVerde}  Iniciando la copia de seguridad de la base de datos del nodo Raven...${FinColor}"
 echo ""
 
-mkdir -p /Host/RVN/CopSegBD/EnCaliente/blocks/ 2> /dev/null
-mkdir -p /Host/RVN/CopSegBD/EnCaliente/chainstate/ 2> /dev/null
+mkdir -p $vCarpetaCopSeg/RVN/CopSegBD/EnCaliente/blocks/ 2> /dev/null
+mkdir -p $vCarpetaCopSeg/RVN/CopSegBD/EnCaliente/chainstate/ 2> /dev/null
 
 # Comprobar si el paquete rsync está instalado. Si no lo está, instalarlo.
   if [[ $(dpkg-query -s rsync 2>/dev/null | grep installed) == "" ]]; then
@@ -40,8 +48,8 @@ mkdir -p /Host/RVN/CopSegBD/EnCaliente/chainstate/ 2> /dev/null
   fi
 #rsync -a --delete /Discos/HDD-CopSeg/ /Discos/HDD-CopSegExt
 
-rsync -av $CarpetaBD1 /Host/RVN/CopSegBD/EnCaliente/blocks
-rsync -av $CarpetaBD2 /Host/RVN/CopSegBD/EnCaliente/chainstate
+rsync -av $CarpetaBD1 $vCarpetaCopSeg/RVN/CopSegBD/EnCaliente/blocks
+rsync -av $CarpetaBD2 $vCarpetaCopSeg/RVN/CopSegBD/EnCaliente/chainstate
 
-echo $vFechaDeEjecCopSeg > /Host/RVN/CopSegBD/EnCaliente/FechaDeEjec.txt
+echo $vFechaDeEjecCopSeg > $vCarpetaCopSeg/RVN/CopSegBD/EnCaliente/FechaDeEjec.txt
 
