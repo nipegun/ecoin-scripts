@@ -47,5 +47,5 @@ mkdir -p $vCarpetaCopSeg/XCH/CopSegBD/$vFechaDeEjecCopSeg 2> /dev/null
   fi
 #rsync -a --delete /Discos/HDD-CopSeg/ /Discos/HDD-CopSegExt
 
-rsync -av $CarpetaBD $vCarpetaCopSeg/XCH/CopSegBD/$vFechaDeEjecCopSeg
+rsync -av $vCarpetaBD $vCarpetaCopSeg/XCH/CopSegBD/$vFechaDeEjecCopSeg
 
