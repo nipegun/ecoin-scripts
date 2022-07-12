@@ -34,7 +34,7 @@ echo ""
 echo -e "${ColorVerde}  Iniciando la copia de seguridad de la base de datos del nodo Chia...${FinColor}"
 echo ""
 
-mkdir -p $vCarpetaCopSeg/XCH/CopSegBD/$FechaDeEjecCopSeg 2> /dev/null
+mkdir -p $vCarpetaCopSeg/XCH/CopSegBD/$vFechaDeEjecCopSeg 2> /dev/null
 
 # Comprobar si el paquete rsync está instalado. Si no lo está, instalarlo.
   if [[ $(dpkg-query -s rsync 2>/dev/null | grep installed) == "" ]]; then
@@ -47,5 +47,5 @@ mkdir -p $vCarpetaCopSeg/XCH/CopSegBD/$FechaDeEjecCopSeg 2> /dev/null
   fi
 #rsync -a --delete /Discos/HDD-CopSeg/ /Discos/HDD-CopSegExt
 
-rsync -av $CarpetaBD $vCarpetaCopSeg/XCH/CopSegBD/$FechaDeEjecCopSeg
+rsync -av $CarpetaBD $vCarpetaCopSeg/XCH/CopSegBD/$vFechaDeEjecCopSeg
 
