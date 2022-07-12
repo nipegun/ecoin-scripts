@@ -10,22 +10,31 @@
 #
 #  Ejecución remota:
 #  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/xch-CopSeg-CadenaDeBloques-ConNodoApagado.sh | bash
+#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/xch-CopSeg-CadenaDeBloques-ConNodoApagado.sh | sed 's-vCarpetaCopSeg="/CopSegInt"-vCarpetaCopSeg="/Copia"-g' | bash
 # ----------
 
 ColorRojo='\033[1;31m'
 ColorVerde='\033[1;32m'
 FinColor='\033[0m'
 
-FechaDeEjecCopSeg=$(date +A%Y-M%m-D%d@%T)
+vFechaDeEjecCopSeg=$(date +A%Y-M%m-D%d@%T)
+vCarpetaCopSeg="/CopSegInt"
 
-Usuario="nipegun"
-CarpetaBD="/home/$Usuario/.chia/mainnet/db/"
+# Definir la carpeta de usuario
+  # Ver si la variable de entorno HOME termina con una /
+     vCarpetaUsuario="$HOME"
+     if [[ "$vCarpetaUsuario" == */ ]]; then
+       # Quitarle la /
+       vCarpetaUsuario=${vCarpetaUsuario%?}
+     fi
+
+vCarpetaBD="$vCarpetaUsuario/.chia/mainnet/db/"
 
 echo ""
 echo -e "${ColorVerde}  Iniciando la copia de seguridad de la base de datos del nodo Chia...${FinColor}"
 echo ""
 
-mkdir -p /Host/XCH/CopSegBD/$FechaDeEjecCopSeg 2> /dev/null
+mkdir -p $vCarpetaCopSeg/XCH/CopSegBD/$FechaDeEjecCopSeg 2> /dev/null
 
 # Comprobar si el paquete rsync está instalado. Si no lo está, instalarlo.
   if [[ $(dpkg-query -s rsync 2>/dev/null | grep installed) == "" ]]; then
@@ -38,5 +47,5 @@ mkdir -p /Host/XCH/CopSegBD/$FechaDeEjecCopSeg 2> /dev/null
   fi
 #rsync -a --delete /Discos/HDD-CopSeg/ /Discos/HDD-CopSegExt
 
-rsync -av $CarpetaBD /Host/XCH/CopSegBD/$FechaDeEjecCopSeg
+rsync -av $CarpetaBD $vCarpetaCopSeg/XCH/CopSegBD/$FechaDeEjecCopSeg
 
