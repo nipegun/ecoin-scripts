@@ -34,8 +34,8 @@ echo ""
 echo -e "${ColorVerde}  Iniciando la copia de seguridad de la base de datos del nodo Raven...${FinColor}"
 echo ""
 
-mkdir -p $vCarpetaCopSeg/RVN/CopSegBD/$FechaDeEjecCopSeg/blocks/ 2> /dev/null
-mkdir -p $vCarpetaCopSeg/RVN/CopSegBD/$FechaDeEjecCopSeg/chainstate/ 2> /dev/null
+mkdir -p $vCarpetaCopSeg/RVN/CopSegBD/$vFechaDeEjecCopSeg/blocks/ 2> /dev/null
+mkdir -p $vCarpetaCopSeg/RVN/CopSegBD/$vFechaDeEjecCopSeg/chainstate/ 2> /dev/null
 
 # Comprobar si el paquete rsync está instalado. Si no lo está, instalarlo.
   if [[ $(dpkg-query -s rsync 2>/dev/null | grep installed) == "" ]]; then
@@ -48,6 +48,6 @@ mkdir -p $vCarpetaCopSeg/RVN/CopSegBD/$FechaDeEjecCopSeg/chainstate/ 2> /dev/nul
   fi
 #rsync -a --delete /Discos/HDD-CopSeg/ /Discos/HDD-CopSegExt
 
-rsync -av $CarpetaBD1 $vCarpetaCopSeg/RVN/CopSegBD/$FechaDeEjecCopSeg/blocks
-rsync -av $CarpetaBD2 $vCarpetaCopSeg/RVN/CopSegBD/$FechaDeEjecCopSeg/chainstate
+rsync -av $CarpetaBD1 $vCarpetaCopSeg/RVN/CopSegBD/$vFechaDeEjecCopSeg/blocks
+rsync -av $CarpetaBD2 $vCarpetaCopSeg/RVN/CopSegBD/$vFechaDeEjecCopSeg/chainstate
 
