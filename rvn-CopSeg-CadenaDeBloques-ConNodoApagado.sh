@@ -26,7 +26,8 @@ echo ""
 echo -e "${ColorVerde}  Iniciando la copia de seguridad de la base de datos del nodo Raven...${FinColor}"
 echo ""
 
-mkdir -p /Host/RVN/CopSegBD/$FechaDeEjecCopSeg 2> /dev/null
+mkdir -p /Host/RVN/CopSegBD/$FechaDeEjecCopSeg/blocks/ 2> /dev/null
+mkdir -p /Host/RVN/CopSegBD/$FechaDeEjecCopSeg/chainstate/ 2> /dev/null
 
 # Comprobar si el paquete rsync está instalado. Si no lo está, instalarlo.
   if [[ $(dpkg-query -s rsync 2>/dev/null | grep installed) == "" ]]; then
@@ -39,6 +40,6 @@ mkdir -p /Host/RVN/CopSegBD/$FechaDeEjecCopSeg 2> /dev/null
   fi
 #rsync -a --delete /Discos/HDD-CopSeg/ /Discos/HDD-CopSegExt
 
-rsync -av $CarpetaBD1 /Host/RVN/CopSegBD/$FechaDeEjecCopSeg
-rsync -av $CarpetaBD2 /Host/RVN/CopSegBD/$FechaDeEjecCopSeg
+rsync -av $CarpetaBD1 /Host/RVN/CopSegBD/$FechaDeEjecCopSeg/blocks
+rsync -av $CarpetaBD2 /Host/RVN/CopSegBD/$FechaDeEjecCopSeg/chainstate
 
