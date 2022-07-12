@@ -54,7 +54,7 @@ vCarpetaCopSeg="/CopSegInt"
 
 # Ejecutar la copia de seguridad
   echo ""
-  echo "  Ejecutando copia de seguridad de la cadena de bloques de Chia..."
+  echo "  Ejecutando copia de seguridad en caliente de la cadena de bloques de Chia..."
   echo ""
   sqlite3 $vCarpetaUsuario/.chia/mainnet/db/blockchain_"$vVersRedPrinc"_mainnet.sqlite "vacuum into '$vCarpDestinoCopSeg/blockchain_"$vVersRedPrinc"_mainnet.sqlite'"
 
