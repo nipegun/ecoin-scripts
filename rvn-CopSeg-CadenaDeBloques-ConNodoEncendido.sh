@@ -27,8 +27,8 @@ vCarpetaCopSeg="/CopSegInt"
        vCarpetaUsuario=${vCarpetaUsuario%?}
      fi
 
-CarpetaBD1="/home/$vCarpetaUsuario/.raven/blocks/"
-CarpetaBD2="/home/$vCarpetaUsuario/.raven/chainstate/"
+CarpetaBD1="$vCarpetaUsuario/.raven/blocks/"
+CarpetaBD2="$vCarpetaUsuario/.raven/chainstate/"
 
 echo ""
 echo -e "${ColorVerde}  Iniciando la copia de seguridad de la base de datos del nodo Raven...${FinColor}"
