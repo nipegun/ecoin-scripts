@@ -10,6 +10,7 @@
 #
 #  Ejecución remota:
 #  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/rvn-CopSeg-CadenaDeBloques-ConNodoEncendido.sh | bash
+#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/rvn-CopSeg-CadenaDeBloques-ConNodoApagado.sh | sed 's-vCarpetaCopSeg="/CopSegInt"-vCarpetaCopSeg="/Copia"-g' | bash
 # ----------
 
 ColorRojo='\033[1;31m'
