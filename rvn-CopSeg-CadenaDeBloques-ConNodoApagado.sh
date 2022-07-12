@@ -6,7 +6,7 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 # ----------
-#  Script de NiPeGun para hacer copia de seguridad de la cadena de bloques de chia con el nodo apagado
+#  Script de NiPeGun para hacer copia de seguridad de la cadena de bloques de raven con el nodo apagado
 #
 #  Ejecución remota:
 #  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/rvn-CopSeg-CadenaDeBloques-ConNodoApagado.sh | bash
@@ -39,6 +39,6 @@ mkdir -p /Host/RVN/CopSegBD/$FechaDeEjecCopSeg 2> /dev/null
   fi
 #rsync -a --delete /Discos/HDD-CopSeg/ /Discos/HDD-CopSegExt
 
-rsync -av $CarpetaBD1 /Host/XCH/CopSegBD/$FechaDeEjecCopSeg
-rsync -av $CarpetaBD2 /Host/XCH/CopSegBD/$FechaDeEjecCopSeg
+rsync -av $CarpetaBD1 /Host/RVN/CopSegBD/$FechaDeEjecCopSeg
+rsync -av $CarpetaBD2 /Host/RVN/CopSegBD/$FechaDeEjecCopSeg
 
