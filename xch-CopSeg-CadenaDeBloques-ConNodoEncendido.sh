@@ -16,6 +16,9 @@ ColorRojo='\033[1;31m'
 ColorVerde='\033[1;32m'
 FinColor='\033[0m'
 
+vFechaDeEjecCopSeg=$(date +A%Y-M%m-D%d@%T)
+vCarpetaCopSeg="/CopSegInt"
+
 # Definir la carpeta de usuario
   # Ver si la variable de entorno HOME termina con una /
      vCarpetaUsuario="$HOME"
@@ -31,7 +34,7 @@ FinColor='\033[0m'
   vFechaCopia=$(date +A%Y-M%m-D%d@%T)
 
 # Definir la carpeta de destino
-  vCarpDestinoCopSeg="/CopSeg/Chia/$vFechaCopia/.chia/mainnet/db"
+  vCarpDestinoCopSeg="$vCarpetaCopSeg/XCH/CopSegBD/EnCaliente/.chia/mainnet/db"
 
 # Definir la carpeta temporal
   export SQLITE_TMPDIR=/var/tmp
