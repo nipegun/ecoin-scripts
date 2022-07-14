@@ -6,7 +6,7 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 #--------------------------------------------------------
-#  Script de NiPeGun para iniciar el daemon de litecoin
+#  Script de NiPeGun para iniciar el daemon de raptoreum
 #--------------------------------------------------------
 
 ## Ver si la variable de entorno HOME termina con una /
@@ -17,8 +17,8 @@
    fi
 
 echo ""
-echo "  Iniciando el daemon litecoind..."
+echo "  Iniciando el daemon raptoreumd..."
 echo ""
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoind 2> /dev/null
-$CarpetaHome/Cryptos/LTC/bin/litecoind -daemon
+chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreumd 2> /dev/null
+$CarpetaHome/Cryptos/RTM/bin/raptoreumd -daemon
 
