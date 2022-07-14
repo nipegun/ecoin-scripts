@@ -5,9 +5,9 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
-#-----------------------------------------------------------------
-#  Script de NiPeGun para iniciar la cartera gráfica de litecoin
-#-----------------------------------------------------------------
+# ----------
+#  Script de NiPeGun para iniciar la cartera gráfica de raptoreum
+# ----------
 
 ## Ver si la variable de entorno HOME termina con una /
    CarpetaHome="$HOME"
@@ -17,17 +17,15 @@
    fi
 
 echo ""
-echo "  Iniciando litecoin-qt..."
+echo "  Iniciando raptoreum-qt..."
 echo ""
-chmod +x $CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh 2> /dev/null
-$CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh
+chmod +x $CarpetaHome/scripts/c-scripts/rtm-daemon-parar.sh 2> /dev/null
+$CarpetaHome/scripts/c-scripts/rtm-daemon-parar.sh
 sleep 5
 
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-cli    2> /dev/null
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-qt     2> /dev/null
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-tx     2> /dev/null
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-wallet 2> /dev/null
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoind       2> /dev/null
-chmod +x $CarpetaHome/Cryptos/LTC/bin/test_litecoin   2> /dev/null
-$CarpetaHome/Cryptos/LTC/bin/litecoin-qt
+chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreum-cli    2> /dev/null
+chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreum-qt     2> /dev/null
+chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreum-tx     2> /dev/null
+chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreumd       2> /dev/null
+$CarpetaHome/Cryptos/RTM/bin/raptoreum-qt
 
