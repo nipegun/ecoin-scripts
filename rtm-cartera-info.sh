@@ -6,7 +6,7 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 #--------------------------------------------------------------------
-#  Script de NiPeGun para mostrar info sobre la cartera de litecoin
+#  Script de NiPeGun para mostrar info sobre la cartera de raptoreum
 #--------------------------------------------------------------------
 
 # Ver si la variable de entorno HOME termina con una /
@@ -17,13 +17,12 @@
   fi
 
 echo ""
-echo "  Mostrando info de la cartera Litecoin..."
+echo "  Mostrando info de la cartera raptoreum..."
 echo ""
 # Comprobar si el paquete jq está instalado. Si no lo está, instalarlo.
   if [[ $(dpkg-query -s jq 2>/dev/null | grep installed) == "" ]]; then
-    apt-get -y update      2> /dev/null
-    apt-get -y install jq  2> /dev/null
+    apt-get -y update      2> /dev/null && apt-get -y install jq
   fi
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-cli 2> /dev/null
-$CarpetaHome/Cryptos/LTC/bin/litecoin-cli getwalletinfo | jq
+chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreum-cli 2> /dev/null
+$CarpetaHome/Cryptos/RTM/bin/raptoreum-cli getwalletinfo | jq
 
