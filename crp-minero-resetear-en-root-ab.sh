@@ -141,6 +141,7 @@ elif [ $OS_VERS == "11" ]; then
     echo "curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/crp-minero-resetear-en-root-ab.sh | bash"                            >> /root/.bash_history
     echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Cryptos-CRP-Minero-InstalarOActualizar.sh | bash" >> /root/.bash_history
     echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/Usuario-Root-AutologuearEnModoTexto-Activar.sh | bash"             >> /root/.bash_history
+    echo "nano /root/.uam/uam.ini"                                                                                                              >> /root/.bash_history
 
   # Reiniciar el sistema
     echo ""
