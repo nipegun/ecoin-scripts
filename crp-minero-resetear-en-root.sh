@@ -115,38 +115,38 @@ elif [ $OS_VERS == "11" ]; then
       fi
     killall -9 uam
 
-    # Hacer copia de seguridad del archio uam.ini
-      mv /root/.uam/uam.ini /root/
+  # Hacer copia de seguridad del archio uam.ini
+    mv /root/.uam/uam.ini /root/
 
-    # Borrar todos los datos del anterior minero
-      echo ""
-      echo "  Borrando todos los datos del anterior minero..."
-      echo ""
-      rm -rf /root/.uam/*
+  # Borrar todos los datos del anterior minero
+    echo ""
+    echo "  Borrando todos los datos del anterior minero..."
+    echo ""
+    rm -rf /root/.uam/*
 
-    # Preparar el archivo .ini del nuevo minero
-      echo ""
-      echo "  Preparando el archivo .ini del nuevo minero..."
-      echo ""
-      IPYPuerto=$(cat /root/uam.ini | grep listens)
-      echo "[net]"       > /root/uam.ini
-      echo "$IPYPuerto" >> /root/uam.ini
-      mv /root/uam.ini /root/.uam/
+  # Preparar el archivo .ini del nuevo minero
+    echo ""
+    echo "  Preparando el archivo .ini del nuevo minero..."
+    echo ""
+    IPYPuerto=$(cat /root/uam.ini | grep listens)
+    echo "[net]"       > /root/uam.ini
+    echo "$IPYPuerto" >> /root/uam.ini
+    mv /root/uam.ini /root/.uam/
 
-    # Re-escribir la dirección de cartera
-      sed -i -e "s|C24C4B77698578B46CDB1C109996B0299984FEE46AAC5CD6025786F5C5C61415|$DirCartera|g" ~/Cryptos/CRP/minero/Minar.sh
+  # Re-escribir la dirección de cartera
+    sed -i -e "s|C24C4B77698578B46CDB1C109996B0299984FEE46AAC5CD6025786F5C5C61415|$DirCartera|g" ~/Cryptos/CRP/minero/Minar.sh
 
-    # Preparar /root/.bash_history
-      echo 'apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove'                                           > /root/.bash_history
-      echo "curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/crp-minero-resetear-en-root.sh | bash"                               >> /root/.bash_history
-      echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Cryptos-CRP-Minero-InstalarOActualizar.sh | bash" >> /root/.bash_history
-      echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/Usuario-Root-AutologuearEnModoTexto-Activar.sh"                    >> /root/.bash_history
+  # Preparar /root/.bash_history
+    echo 'apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove'                                           > /root/.bash_history
+    echo "curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/crp-minero-resetear-en-root.sh | bash"                               >> /root/.bash_history
+    echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Cryptos-CRP-Minero-InstalarOActualizar.sh | bash" >> /root/.bash_history
+    echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/Usuario-Root-AutologuearEnModoTexto-Activar.sh"                    >> /root/.bash_history
 
-    # Reiniciar el sistema
-      echo ""
-      echo "  Reiniciando el sistema..."
-      echo ""
-      shutdown -r now
+  # Reiniciar el sistema
+    echo ""
+    echo "  Reiniciando el sistema..."
+    echo ""
+    shutdown -r now
 
 fi
 
