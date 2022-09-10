@@ -140,7 +140,7 @@ elif [ $OS_VERS == "11" ]; then
     echo 'apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove'                                           > /root/.bash_history
     echo "curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/crp-minero-resetear-en-root-ei.sh | bash"                            >> /root/.bash_history
     echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Cryptos-CRP-Minero-InstalarOActualizar.sh | bash" >> /root/.bash_history
-    echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/Usuario-Root-AutologuearEnModoTexto-Activar.sh"                    >> /root/.bash_history
+    echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/Usuario-Root-AutologuearEnModoTexto-Activar.sh | bash"             >> /root/.bash_history
 
   # Reiniciar el sistema
     echo ""
