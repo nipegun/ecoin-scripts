@@ -61,6 +61,9 @@
   chmod +x "$vUbicacMinero"uam 2> /dev/null
   "$vUbicacMinero"uam --version | cut -d '-' -f2 | cut -d' ' -f3 > /tmp/currentutopiaversion
 
+# Borrar archivos sobrantes
+  rm -rf /tmp/utopiaminer/*
+
 # Comparar versión instalada con última versión
   if [ $(cat /tmp/latestutopiaversion) = $(cat /tmp/latestutopiaversion) ]; then
     echo "Las versiones coinciden."
