@@ -67,7 +67,7 @@
   rm -rf /tmp/utopiaminer/*
 
 # Comparar versión instalada con última versión
-  if [ $(cat /tmp/latestutopiaversion) = $(cat /tmp/latestutopiaversion) ]; then
+  if [ $(cat /tmp/latestutopiaversion) = $(cat /tmp/currentutopiaversion) ]; then
     echo "Las versiones coinciden."
     echo "Tienes instalada la versión $(cat /tmp/currentutopiaversion) y la última versión disponible es la $(cat /tmp/latestutopiaversion)"
   else
