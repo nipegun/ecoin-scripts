@@ -11,11 +11,11 @@
 #  Ejecución remota:
 #  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/crp-minero-comprobar-versiones.sh | bash
 #
-#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/crp-minero-comprobar-versiones.sh | sed 's-vUbicacMinero=/home/-vUbicacMinero=/TuCarpetaDeMinero/-g' | bash
+#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/crp-minero-comprobar-versiones.sh | sed 's-vUbicacMinero=/root/Cryptos/CRP/minero/-vUbicacMinero="/TuCarpetaDeMinero/"-g' | bash
 # ----------
 
 # Ubicación del minero
-  vUbicacMinero=/home/
+  vUbicacMinero=/root/Cryptos/CRP/minero/
 
 # Determinar última version
 
