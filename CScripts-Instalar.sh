@@ -18,7 +18,7 @@ FinColor='\033[0m'
 
 echo ""
 echo -e "${ColorVerde}----------------------------------------------------------------------------------${FinColor}"
-echo -e "${ColorVerde}  Iniciando el script de instalción de los c-scripts para el usuario $USER...${FinColor}"
+echo -e "${ColorVerde}  Iniciando el script de instalación de los c-scripts para el usuario $USER...${FinColor}"
 echo -e "${ColorVerde}----------------------------------------------------------------------------------${FinColor}"
 echo ""
 
