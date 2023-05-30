@@ -5,16 +5,16 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
-#--------------------------------------------------------------
-#  Script de NiPeGun para mostrar info de la cartera de raven 
-#--------------------------------------------------------------
+# ----------
+# Script de NiPeGun para mostrar info de la cartera de raven 
+# ----------
 
-## Ver si la variable de entorno HOME termina con una /
-   CarpetaHome="$HOME"
-   if [[ "$CarpetaHome" == */ ]]; then
-     # Quitarle la /
-     CarpetaHome=${CarpetaHome%?}
-   fi
+# Ver si la variable de entorno HOME termina con una /
+  vCarpetaHome="$HOME"
+  if [[ "$vCarpetaHome" == */ ]]; then
+    # Quitarle la /
+    vCarpetaHome=${vCarpetaHome%?}
+  fi
 
 echo ""
 echo "  Mostrando info de la cartera Raven..."
@@ -24,6 +24,6 @@ echo ""
     apt-get -y update      2> /dev/null
     apt-get -y install jq  2> /dev/null
   fi
-chmod +x $CarpetaHome/Cryptos/RVN/bin/raven-cli 2> /dev/null
-$CarpetaHome/Cryptos/RVN/bin/raven-cli getwalletinfo | jq
+chmod +x $vCarpetaHome/Cryptos/RVN/bin/raven-cli 2> /dev/null
+$vCarpetaHome/Cryptos/RVN/bin/raven-cli getwalletinfo | jq
 
