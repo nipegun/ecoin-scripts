@@ -58,15 +58,16 @@ echo ""
           echo ""
         fi
       git clone --depth=1 https://github.com/nipegun/c-scripts
-      mkdir -p $CarpetaInst/scripts/c-scripts/Alias/
       rm $CarpetaInst/scripts/c-scripts/.git -R 2> /dev/null
       find $CarpetaInst/scripts/c-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
-      $CarpetaInst/scripts/c-scripts/CScripts-CrearAlias.sh
-      find $CarpetaInst/scripts/c-scripts/Alias -type f -exec chmod +x {} \;
-   
       echo ""
       echo -e "${vColorVerde}    c-scripts sincronizados correctamente.${vFinColor}"
       echo ""
+
+      # Crear los alias
+        mkdir -p $CarpetaInst/scripts/c-scripts/Alias/
+        $CarpetaInst/scripts/c-scripts/CScripts-CrearAlias.sh
+        find $CarpetaInst/scripts/c-scripts/Alias -type f -exec chmod +x {} \;
     else
       echo ""
       echo -e "${vColorRojo}    No se pudo iniciar la sincronización de los c-scripts porque no se detectó conexión a Internet.${vFinColor}"
