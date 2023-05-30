@@ -42,19 +42,19 @@ echo ""
   vBloques=$(jq -r '.blocks' /tmp/EstadoSincroBlockchainRaven.json)
 
 # Comparar valores
-  if (( $vHeaders == $vBloques )); then
+  if [[ $vHeaders == $vBloques ]]; then
     echo ""
-    echo "  Resultado: Sincronizada."
+    echo "    Resultado: Sincronizada."
     echo ""
-    echo "    Headers totales: $vHeaders"
-    echo "    Bloques descargados: $vBloques"
+    echo "      Headers totales: $vHeaders"
+    echo "      Bloques descargados: $vBloques"
     echo ""
   else
     echo ""
-    echo "  Resultado: No sincronizada."
+    echo "    Resultado: No sincronizada."
     echo ""
-    echo "    Headers totales: $vHeaders"
-    echo "    Bloques descargados: $vBloques"
+    echo "      Headers totales: $vHeaders"
+    echo "      Bloques descargados: $vBloques"
     echo ""
   fi
 
