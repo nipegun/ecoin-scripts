@@ -34,3 +34,4 @@ echo ""
 
 # Obtener información de la cartera
   $vCarpetaHome/Cryptos/RVN/bin/raven-cli --getinfo | jq
+
