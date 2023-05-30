@@ -6,11 +6,11 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 # ----------
-#  Script de NiPeGun para hacer copia de seguridad de la cadena de bloques de raven con el nodo apagado
+# Script de NiPeGun para hacer copia de seguridad de la cadena de bloques de raven con el nodo apagado
 #
-#  Ejecución remota:
-#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/rvn-CopSeg-CadenaDeBloques-ConNodoEncendido.sh | bash
-#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/rvn-CopSeg-CadenaDeBloques-ConNodoApagado.sh | sed 's-vCarpetaCopSeg="/CopSegInt"-vCarpetaCopSeg="/Copia"-g' | bash
+# Ejecución remota:
+#   curl -sL https://raw.githubusercontent.com/nipegun/c-scripts/main/rvn-CopSeg-CadenaDeBloques-ConNodoEncendido.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/c-scripts/main/rvn-CopSeg-CadenaDeBloques-ConNodoApagado.sh | sed 's-vCarpetaCopSeg="/CopSegInt"-vCarpetaCopSeg="/Copia"-g' | bash
 # ----------
 
 ColorRojo='\033[1;31m'
