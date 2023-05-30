@@ -45,7 +45,7 @@
   wget -q --tries=10 --timeout=20 --spider https://github.com
     if [[ $? -eq 0 ]]; then
       echo ""
-      echo "  Instalando los c-scripts con las últimas versiones y descargando nuevos c-scripts si es que existen..."
+      echo "    Instalando los c-scripts con las últimas versiones y descargando nuevos c-scripts si es que existen..."
       echo ""
       rm $vCarpetaInst/scripts/c-scripts -R 2> /dev/null
       mkdir $vCarpetaInst/scripts 2> /dev/null
@@ -53,7 +53,7 @@
       ## Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
         if [[ $(dpkg-query -s git 2>/dev/null | grep installed) == "" ]]; then
           echo ""
-          echo -e "${vColorRojo}    El paquete git no está instalado. Iniciando su instalación...${vFinColor}"
+          echo -e "${vColorRojo}      El paquete git no está instalado. Iniciando su instalación...${vFinColor}"
           echo ""
           apt-get -y update
           apt-get -y install git
@@ -63,7 +63,7 @@
       rm $vCarpetaInst/scripts/c-scripts/.git -R 2> /dev/null
       find $vCarpetaInst/scripts/c-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
       echo ""
-      echo -e "${vColorVerde}    c-scripts sincronizados correctamente.${vFinColor}"
+      echo -e "${vColorVerde}      c-scripts sincronizados correctamente.${vFinColor}"
       echo ""
 
       # Crear los alias
