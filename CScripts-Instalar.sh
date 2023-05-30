@@ -45,9 +45,9 @@ echo ""
       echo ""
       echo "  Instalando los c-scripts con las últimas versiones y descargando nuevos c-scripts si es que existen..."
       echo ""
-      rm $CarpetaInst/scripts/c-scripts -R 2> /dev/null
-      mkdir $CarpetaInst/scripts 2> /dev/null
-      cd $CarpetaInst/scripts
+      rm $vCarpetaInst/scripts/c-scripts -R 2> /dev/null
+      mkdir $vCarpetaInst/scripts 2> /dev/null
+      cd $vCarpetaInst/scripts
       ## Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
         if [[ $(dpkg-query -s git 2>/dev/null | grep installed) == "" ]]; then
           echo ""
@@ -58,16 +58,16 @@ echo ""
           echo ""
         fi
       git clone --depth=1 https://github.com/nipegun/c-scripts
-      rm $CarpetaInst/scripts/c-scripts/.git -R 2> /dev/null
-      find $CarpetaInst/scripts/c-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
+      rm $vCarpetaInst/scripts/c-scripts/.git -R 2> /dev/null
+      find $vCarpetaInst/scripts/c-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
       echo ""
       echo -e "${vColorVerde}    c-scripts sincronizados correctamente.${vFinColor}"
       echo ""
 
       # Crear los alias
-        mkdir -p $CarpetaInst/scripts/c-scripts/Alias/
-        $CarpetaInst/scripts/c-scripts/CScripts-CrearAlias.sh
-        find $CarpetaInst/scripts/c-scripts/Alias -type f -exec chmod +x {} \;
+        mkdir -p $vCarpetaInst/scripts/c-scripts/Alias/
+        $vCarpetaInst/scripts/c-scripts/CScripts-CrearAlias.sh
+        find $vCarpetaInst/scripts/c-scripts/Alias -type f -exec chmod +x {} \;
     else
       echo ""
       echo -e "${vColorRojo}    No se pudo iniciar la sincronización de los c-scripts porque no se detectó conexión a Internet.${vFinColor}"
