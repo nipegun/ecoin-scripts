@@ -31,8 +31,6 @@
     vCarpetaInst=${vCarpetaInst%?}
   fi
 
-
-
 # Comprobar si hay conexión a Internet antes de sincronizar los c-scripts
   # Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
     if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
