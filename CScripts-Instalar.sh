@@ -19,9 +19,10 @@
   vColorRojo='\033[1;31m'
   vFinColor='\033[0m'
 
-echo ""
-echo -e "${vColorAzulClaro}    Iniciando el script de instalación de los c-scripts para el usuario $USER...${vFinColor}"
-echo ""
+# Notificar inicio de ejecución del script
+  echo ""
+  echo -e "${vColorAzulClaro}  Iniciando el script de instalación de los c-scripts para el usuario $USER...${vFinColor}"
+  echo ""
 
 # Ver si la variable de entorno HOME termina con una /
   vCarpetaInst="$HOME"
@@ -30,16 +31,17 @@ echo ""
     vCarpetaInst=${vCarpetaInst%?}
   fi
 
-# Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
-  if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
-    echo ""
-    echo -e "${vColorRojo}    El paquete wget no está instalado. Iniciando su instalación...${vFinColor}"
-    echo ""
-    su root -c "apt-get -y update"
-    su root -c "apt-get -y install wget"
-  fi
+
 
 # Comprobar si hay conexión a Internet antes de sincronizar los c-scripts
+  # Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
+    if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
+      echo ""
+      echo -e "${vColorRojo}    El paquete wget no está instalado. Iniciando su instalación...${vFinColor}"
+      echo ""
+      su root -c "apt-get -y update"
+      su root -c "apt-get -y install wget"
+    fi
   wget -q --tries=10 --timeout=20 --spider https://github.com
     if [[ $? -eq 0 ]]; then
       echo ""
