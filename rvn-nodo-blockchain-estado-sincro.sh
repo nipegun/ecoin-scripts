@@ -33,5 +33,28 @@ echo ""
   chmod +x $vCarpetaHome/Cryptos/RVN/bin/raven-cli 2> /dev/null
 
 # Obtener información de la cartera
-  $vCarpetaHome/Cryptos/RVN/bin/raven-cli getblockchaininfo | jq
+  $vCarpetaHome/Cryptos/RVN/bin/raven-cli getblockchaininfo | jq > /tmp/EstadoSincroBlockchainRaven.json
+
+# Obtener la cantidad de headers totales de la cadena de bloques
+  vHeaders=$(jq -r '.headers' /tmp/EstadoSincroBlockchainRaven.json)
+
+# Obtener la cantidad de bloques descargados
+  vBloques=$(jq -r '.blocks' /tmp/EstadoSincroBlockchainRaven.json)
+
+# Comparar valores
+  if (( $vHeaders = $vBloques )); then
+    echo ""
+    echo "  Resultado: Sincronizada."
+    echo ""
+    echo "    Headers totales: $vHeaders"
+    echo "    Bloques descargados: $vBloques"
+    echo ""
+  elif
+    echo ""
+    echo "  Resultado: No sincronizada."
+    echo ""
+    echo "    Headers totales: $vHeaders"
+    echo "    Bloques descargados: $vBloques"
+    echo ""
+  fi
 
