@@ -49,7 +49,7 @@ echo ""
     echo "    Headers totales: $vHeaders"
     echo "    Bloques descargados: $vBloques"
     echo ""
-  elif
+  else
     echo ""
     echo "  Resultado: No sincronizada."
     echo ""
