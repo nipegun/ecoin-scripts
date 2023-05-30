@@ -23,12 +23,12 @@ echo ""
 echo -e "${vColorAzulClaro}    Iniciando el script de instalación de los c-scripts para el usuario $USER...${vFinColor}"
 echo ""
 
-## Ver si la variable de entorno HOME termina con una /
-   CarpetaInst="$HOME"
-   if [[ "$CarpetaInst" == */ ]]; then
-     # Quitarle la /
-     CarpetaInst=${CarpetaInst%?}
-   fi
+# Ver si la variable de entorno HOME termina con una /
+  vCarpetaInst="$HOME"
+  if [[ "$vCarpetaInst" == */ ]]; then
+    # Quitarle la /
+    vCarpetaInst=${vCarpetaInst%?}
+  fi
 
 # Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
   if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
