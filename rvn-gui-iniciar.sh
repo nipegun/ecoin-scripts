@@ -5,27 +5,31 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
-#------------------------------------------------------------------
-#  Script de NiPeGun para iniciar la cartera gráfica de ravencoin
-#------------------------------------------------------------------
+# ----------
+# Script de NiPeGun para iniciar la cartera gráfica de ravencoin
+# ----------
 
-## Ver si la variable de entorno HOME termina con una /
-   CarpetaHome="$HOME"
-   if [[ "$CarpetaHome" == */ ]]; then
-     # Quitarle la /
-     CarpetaHome=${CarpetaHome%?}
-   fi
+# Ver si la variable de entorno HOME termina con una /
+  vCarpetaHome="$HOME"
+  if [[ "$vCarpetaHome" == */ ]]; then
+    # Quitarle la /
+    vCarpetaHome=${vCarpetaHome%?}
+  fi
 
-echo ""
-echo "  Iniciando raven-qt..."
-echo ""
-chmod +x $CarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh 2> /dev/null
-$CarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh
-sleep 5
+# Notificar el inicio de ejecución del script
+  echo ""
+  echo "  Iniciando raven-qt..."
+  echo ""
 
-chmod +x $CarpetaHome/Cryptos/RVN/bin/raven-cli  2> /dev/null
-chmod +x $CarpetaHome/Cryptos/RVN/bin/raven-qt   2> /dev/null
-chmod +x $CarpetaHome/Cryptos/RVN/bin/ravend     2> /dev/null
-chmod +x $CarpetaHome/Cryptos/RVN/bin/test_raven 2> /dev/null
-$CarpetaHome/Cryptos/RVN/bin/raven-qt -min -testnet=0 -regtest=0
+# Parar el daemon
+  chmod +x $vCarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh 2> /dev/null
+  $vCarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh
+  sleep 5
+
+# Iniciar el nodo gráfico
+  chmod +x $vCarpetaHome/Cryptos/RVN/bin/raven-cli  2> /dev/null
+  chmod +x $vCarpetaHome/Cryptos/RVN/bin/raven-qt   2> /dev/null
+  chmod +x $vCarpetaHome/Cryptos/RVN/bin/ravend     2> /dev/null
+  chmod +x $vCarpetaHome/Cryptos/RVN/bin/test_raven 2> /dev/null
+  $vCarpetaHome/Cryptos/RVN/bin/raven-qt -min -testnet=0 -regtest=0
 
