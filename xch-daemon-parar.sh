@@ -9,12 +9,12 @@
 #  Script de NiPeGun para parar el daemon de chia
 # ----------
 
-## Ver si la variable de entorno HOME termina con una /
-   CarpetaHome="$HOME"
-   if [[ "$CarpetaHome" == */ ]]; then
-     # Quitarle la /
-     CarpetaHome=${CarpetaHome%?}
-   fi
+# Ver si la variable de entorno HOME termina con una /
+  CarpetaHome="$HOME"
+  if [[ "$CarpetaHome" == */ ]]; then
+    # Quitarle la /
+      CarpetaHome=${CarpetaHome%?}
+  fi
 
 echo ""
 echo "  Parando el demonio de chia (si es que está activo)..."
