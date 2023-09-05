@@ -5,20 +5,21 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
-#---------------------------------------------------
-#  Script de NiPeGun para parar el daemon de raven
-#---------------------------------------------------
+# ----------
+# Script de NiPeGun para parar el daemon de raven
+# ----------
 
-## Ver si la variable de entorno HOME termina con una /
-   CarpetaHome="$HOME"
-   if [[ "$CarpetaHome" == */ ]]; then
-     # Quitarle la /
-     CarpetaHome=${CarpetaHome%?}
-   fi
+# Ver si la variable de entorno HOME termina con una /
+  CarpetaHome="$HOME"
+  if [[ "$CarpetaHome" == */ ]]; then
+    # Quitarle la /
+    CarpetaHome=${CarpetaHome%?}
+  fi
 
-echo ""
-echo "  Parando el daemon ravend..."
-echo ""
-chmod +x $CarpetaHome/Cryptos/RVN/bin/raven-cli 2> /dev/null
-$CarpetaHome/Cryptos/RVN/bin/raven-cli stop
+# Parar el daemon
+  echo ""
+  echo "  Parando el daemon ravend..."
+  echo ""
+  chmod +x $CarpetaHome/Cryptos/RVN/bin/raven-cli 2> /dev/null
+           $CarpetaHome/Cryptos/RVN/bin/raven-cli stop
 
