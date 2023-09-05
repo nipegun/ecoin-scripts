@@ -16,17 +16,19 @@
     vCarpetaHome=${vCarpetaHome%?}
   fi
 
-# Parar el daemon
-  chmod +x $vCarpetaHome/scripts/c-scripts/bch-daemon-parar.sh 2> /dev/null
-           $vCarpetaHome/scripts/c-scripts/bch-daemon-parar.sh
-  sleep 5
-
-# Iniciar el nodo gráfico
+# Iniciar el proceso de lanzamiento gráfico del nodo
   echo ""
   echo "  Iniciando bitcoin-qt..."
   echo ""
-  chmod +x $vCarpetaHome/Cryptos/BCH/bin/bitcoin-cli  2> /dev/null
-  chmod +x $vCarpetaHome/Cryptos/BCH/bin/bitcoin-qt   2> /dev/null
-  chmod +x $vCarpetaHome/Cryptos/BCH/bin/bitcoind     2> /dev/null
-           $vCarpetaHome/Cryptos/BCH/bin/bitcoin-qt
+  # Parar primero el daemon
+    chmod +x $vCarpetaHome/scripts/c-scripts/bch-daemon-parar.sh 2> /dev/null
+             $vCarpetaHome/scripts/c-scripts/bch-daemon-parar.sh
+  # Esperar 5 segundos
+    sleep 5
+  # Asignar permisos de ejecución
+    chmod +x $vCarpetaHome/Cryptos/BCH/bin/bitcoin-cli  2> /dev/null
+    chmod +x $vCarpetaHome/Cryptos/BCH/bin/bitcoin-qt   2> /dev/null
+    chmod +x $vCarpetaHome/Cryptos/BCH/bin/bitcoind     2> /dev/null
+  # Lanzar la app gráfica
+    $vCarpetaHome/Cryptos/BCH/bin/bitcoin-qt
 
