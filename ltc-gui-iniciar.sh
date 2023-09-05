@@ -5,29 +5,32 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
-#-----------------------------------------------------------------
-#  Script de NiPeGun para iniciar la cartera gráfica de litecoin
-#-----------------------------------------------------------------
+# ----------
+# Script de NiPeGun para iniciar la cartera gráfica de litecoin
+# ----------
 
-## Ver si la variable de entorno HOME termina con una /
-   CarpetaHome="$HOME"
-   if [[ "$CarpetaHome" == */ ]]; then
-     # Quitarle la /
-     CarpetaHome=${CarpetaHome%?}
-   fi
+# Ver si la variable de entorno HOME termina con una /
+  CarpetaHome="$HOME"
+  if [[ "$CarpetaHome" == */ ]]; then
+    # Quitarle la /
+    CarpetaHome=${CarpetaHome%?}
+  fi
 
-echo ""
-echo "  Iniciando litecoin-qt..."
-echo ""
-chmod +x $CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh 2> /dev/null
-$CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh
-sleep 5
-
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-cli    2> /dev/null
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-qt     2> /dev/null
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-tx     2> /dev/null
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-wallet 2> /dev/null
-chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoind       2> /dev/null
-chmod +x $CarpetaHome/Cryptos/LTC/bin/test_litecoin   2> /dev/null
-$CarpetaHome/Cryptos/LTC/bin/litecoin-qt
+# Iniciar el proceso de lanzamiento gráfico del nodo
+  echo ""
+  echo "  Iniciando litecoin-qt..."
+  echo ""
+  chmod +x $CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh 2> /dev/null
+  $CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh
+  # Esperar 5 segundos
+    sleep 5
+  # Asignar permisos de ejecución
+    chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-cli    2> /dev/null
+    chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-qt     2> /dev/null
+    chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-tx     2> /dev/null
+    chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoin-wallet 2> /dev/null
+    chmod +x $CarpetaHome/Cryptos/LTC/bin/litecoind       2> /dev/null
+    chmod +x $CarpetaHome/Cryptos/LTC/bin/test_litecoin   2> /dev/null
+  # Lanzar la app gráfica
+    $CarpetaHome/Cryptos/LTC/bin/litecoin-qt
 
