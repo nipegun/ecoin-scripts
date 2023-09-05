@@ -16,12 +16,17 @@
      CarpetaHome=${CarpetaHome%?}
    fi
 
-echo ""
-echo "  Iniciando chia-blockchain..."
-echo ""
-chmod +x $CarpetaHome/scripts/c-scripts/xch-daemon-parar.sh 2> /dev/null
-$CarpetaHome/scripts/c-scripts/xch-daemon-parar.sh
-sleep 5
-chmod +x $CarpetaHome/Cryptos/XCH/chia-blockchain/chia-blockchain 2> /dev/null
-$CarpetaHome/Cryptos/XCH/chia-blockchain/chia-blockchain
+# Iniciar el proceso de lanzamiento gráfico del nodo
+  echo ""
+  echo "  Iniciando chia-blockchain..."
+  echo ""
+  # Parar primero el daemon
+    chmod +x $CarpetaHome/scripts/c-scripts/xch-daemon-parar.sh 2> /dev/null
+             $CarpetaHome/scripts/c-scripts/xch-daemon-parar.sh
+  # Esperar 5 segundos
+    sleep 5
+  # Asignar permisos de ejecución
+    chmod +x $CarpetaHome/Cryptos/XCH/chia-blockchain/chia-blockchain 2> /dev/null
+  # Lanzar la app gráfica
+    $CarpetaHome/Cryptos/XCH/chia-blockchain/chia-blockchain
 
