@@ -18,7 +18,7 @@
 
 # Parar el daemon
   chmod +x $vCarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh 2> /dev/null
-  $vCarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh
+           $vCarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh
   sleep 5
 
 # Iniciar el nodo gráfico
@@ -30,5 +30,5 @@
   chmod +x $vCarpetaHome/Cryptos/RVN/bin/ravend     2> /dev/null
   chmod +x $vCarpetaHome/Cryptos/RVN/bin/test_raven 2> /dev/null
   #$vCarpetaHome/Cryptos/RVN/bin/raven-qt -min -testnet=0 -regtest=0
-  $vCarpetaHome/Cryptos/RVN/bin/raven-qt
+           $vCarpetaHome/Cryptos/RVN/bin/raven-qt
 
