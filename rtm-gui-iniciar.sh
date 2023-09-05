@@ -9,23 +9,27 @@
 #  Script de NiPeGun para iniciar la cartera gráfica de raptoreum
 # ----------
 
-## Ver si la variable de entorno HOME termina con una /
-   CarpetaHome="$HOME"
-   if [[ "$CarpetaHome" == */ ]]; then
-     # Quitarle la /
-     CarpetaHome=${CarpetaHome%?}
-   fi
+# Ver si la variable de entorno HOME termina con una /
+  CarpetaHome="$HOME"
+  if [[ "$CarpetaHome" == */ ]]; then
+    # Quitarle la /
+    CarpetaHome=${CarpetaHome%?}
+  fi
 
-echo ""
-echo "  Iniciando raptoreum-qt..."
-echo ""
-chmod +x $CarpetaHome/scripts/c-scripts/rtm-daemon-parar.sh 2> /dev/null
-$CarpetaHome/scripts/c-scripts/rtm-daemon-parar.sh
-sleep 5
-
-chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreum-cli    2> /dev/null
-chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreum-qt     2> /dev/null
-chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreum-tx     2> /dev/null
-chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreumd       2> /dev/null
-$CarpetaHome/Cryptos/RTM/bin/raptoreum-qt
+# Iniciar el proceso de lanzamiento gráfico del nodo
+  echo ""
+  echo "  Iniciando raptoreum-qt..."
+  echo ""
+  # Parar primero el daemon
+    chmod +x $CarpetaHome/scripts/c-scripts/rtm-daemon-parar.sh 2> /dev/null
+    $CarpetaHome/scripts/c-scripts/rtm-daemon-parar.sh
+  # Esperar 5 segundos
+    sleep 5
+  # Asignar permisos de ejecución
+    chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreum-cli    2> /dev/null
+    chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreum-qt     2> /dev/null
+    chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreum-tx     2> /dev/null
+    chmod +x $CarpetaHome/Cryptos/RTM/bin/raptoreumd       2> /dev/null
+  # Lanzar la app gráfica
+    $CarpetaHome/Cryptos/RTM/bin/raptoreum-qt
 
