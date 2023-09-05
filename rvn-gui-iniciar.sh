@@ -16,19 +16,21 @@
     vCarpetaHome=${vCarpetaHome%?}
   fi
 
-# Parar el daemon
-  chmod +x $vCarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh 2> /dev/null
-           $vCarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh
-  sleep 5
-
-# Iniciar el nodo gráfico
+# Iniciar el proceso de lanzamiento gráfico del nodo
   echo ""
   echo "  Iniciando raven-qt..."
   echo ""
-  chmod +x $vCarpetaHome/Cryptos/RVN/bin/raven-cli  2> /dev/null
-  chmod +x $vCarpetaHome/Cryptos/RVN/bin/raven-qt   2> /dev/null
-  chmod +x $vCarpetaHome/Cryptos/RVN/bin/ravend     2> /dev/null
-  chmod +x $vCarpetaHome/Cryptos/RVN/bin/test_raven 2> /dev/null
-  #$vCarpetaHome/Cryptos/RVN/bin/raven-qt -min -testnet=0 -regtest=0
-           $vCarpetaHome/Cryptos/RVN/bin/raven-qt
+  # Parar primero el daemon
+    chmod +x $vCarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh 2> /dev/null
+             $vCarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh
+  # Esperar 5 segundos
+    sleep 5
+  # Asignar permisos de ejecución
+    chmod +x $vCarpetaHome/Cryptos/RVN/bin/raven-cli  2> /dev/null
+    chmod +x $vCarpetaHome/Cryptos/RVN/bin/raven-qt   2> /dev/null
+    chmod +x $vCarpetaHome/Cryptos/RVN/bin/ravend     2> /dev/null
+    chmod +x $vCarpetaHome/Cryptos/RVN/bin/test_raven 2> /dev/null
+  # Lanzar la app gráfica
+    #$vCarpetaHome/Cryptos/RVN/bin/raven-qt -min -testnet=0 -regtest=0
+    $vCarpetaHome/Cryptos/RVN/bin/raven-qt
 
