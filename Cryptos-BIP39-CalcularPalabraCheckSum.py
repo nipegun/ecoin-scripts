@@ -16,7 +16,6 @@ from hashlib import sha256
 import binascii
 import itertools
 
-
 def get_bip39_words_list():
     lines = None
     # downloaded from https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt
@@ -24,7 +23,6 @@ def get_bip39_words_list():
         lines = [line.rstrip() for line in file]
     assert(len(lines) == 2048)
     return lines
-
 
 def main():
     bip39_words_list = get_bip39_words_list()
@@ -57,7 +55,6 @@ def main():
             continue
 
         break
-
 
     bits_string = ''
     for word in seed_list:
