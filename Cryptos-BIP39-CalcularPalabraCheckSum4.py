@@ -20,7 +20,7 @@ import itertools
 def get_bip39_words_list():
     lines = None
     # downloaded from https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt
-    with open('/tmp/BIP39english') as file:
+    with open('/tmp/BIP39english.txt') as file:
         lines = [line.rstrip() for line in file]
     assert(len(lines) == 2048)
     return lines
