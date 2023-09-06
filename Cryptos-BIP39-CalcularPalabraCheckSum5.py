@@ -9,7 +9,7 @@
 # El script original es este: https://github.com/91DarioDev/bip39-checksum-words-finder/blob/main/main.py
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/c-scripts/main/Cryptos-BIP39-CalcularPalabraCheckSum.py | python3
+#   wget https://raw.githubusercontent.com/nipegun/c-scripts/main/Cryptos-BIP39-CalcularPalabraCheckSum.py && python3 Cryptos-BIP39-CalcularPalabraCheckSum.py
 # ----------
 
 from hashlib import sha256
