@@ -58,6 +58,6 @@ vUsuarioNoRoot="nipegun"
     #/root/scripts/ParaEsteDebian/Telegramear-HTML.sh "<b>Estado de la granja de Chia de <a href='tg://user?id=29421797'>NiPeGun</a>:</b>%0A  Versión de nodo: $ChiaVers %0A  Balance de cartera: $ChiaSaldo %0A  Cantidad de parcelas: $ChiaParc %0A  Espacio de parcelas: $ChiaEspac "
      /root/scripts/ParaEsteDebian/Telegramear-HTML.sh "<b>Estado de la granja de Chia:</b>%0A  Versión de nodo: $vChiaVers %0A  Balance de la granja: $vChiaSaldo %0A  Cantidad de parcelas: $vChiaParc %0A  Espacio de parcelas: $vChiaEspac "
      # Actualizar este archvo para adaptar al nuevo saldo
-       sed -i -e 's|$vChiaSaldo != ""|$vChiaSaldo != "'"$vChiaSaldo"'"|g' /root/scripts/c-scripts/xch-Granja-Cambios-Notificar.sh
+       sed -i -e 's|$vChiaSaldo != ""|$vChiaSaldo != "'"$vChiaSaldo"'"|g' /root/scripts/c-scripts/xch-Nodo-Cambios-Notificar-Por-Telegram.sh
   fi
 
