@@ -34,7 +34,7 @@ vUsuarioNoRoot="nipegun"
   touch /tmp/ChiaSaldo.txt
   chmod 777 /tmp/ChiaSaldo.txt
 # Comprobar cartera
-  su - $vUsuarioNoRoot -c "$vCaminoAlEjecutable wallet show | grep 'Total Balance' | grep -v ending | cut -d':' -f2 | cut -d' ' -f2 > /tmp/ChiaSaldo.txt"
+  su - $vUsuarioNoRoot -c "$vCaminoAlEjecutable wallet show | grep 'Total Balance' | head -n1 | grep -v ending | cut -d':' -f2 | sed 's- --g' | cut -d'x' -f1 > /tmp/ChiaSaldo.txt"
 # Guardar el balance de la cartera en una variable
   vSaldoCartera=$(cat /tmp/ChiaSaldo.txt)
 # Enviar mensaje si el saldo de la cartera cambia
