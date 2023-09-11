@@ -48,6 +48,6 @@ vUsuarioNoRoot="nipegun"
   if [[ $vSaldoCartera != "" ]]; then
      /root/scripts/ParaEsteDebian/Telegramear-Texto.sh "El saldo de la cartera de Chia es: $vSaldoCartera"
      # Actualizar este archvo para adaptar al nuevo saldo
-       sed -i -e 's|$vSaldoCartera != ""|$vSaldoCartera != "'"$vSaldoCartera"'"|g' /root/scripts/c-scripts/xch-Cartera-Saldo-Notificar-Cambio.sh
+       sed -i -e 's|$vSaldoCartera != ""|$vSaldoCartera != "'"$vSaldoCartera"'"|g' /root/scripts/c-scripts/xch-Cartera-Saldo-Cambio-Notificar-Por-Telegram.sh
   fi
 
