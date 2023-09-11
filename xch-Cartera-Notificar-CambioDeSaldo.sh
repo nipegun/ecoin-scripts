@@ -11,19 +11,23 @@ vUsuarioNoRoot="nipegun"
     #echo "$(tput setaf 1)Mensaje en color rojo. $(tput sgr 0)"
   cFinColor='\033[0m'
 
+# Notificar inicio de ejecución del script
+  echo ""
+  echo -e "${cColorAzulClaro}  Iniciando el script de notificación de saldo de cartera de Chia...${cFinColor}"
+  echo ""
+
 # Definir la ubicación del ejecutable
   echo ""
-  echo "  Determinando la ubicación del ejecutable de chia..."
-  echo ""
+  echo "    Determinando la ruta hasta el ejecutable de chia..."
   if [ -f '/opt/chia/resources/app.asar.unpacked/daemon/chia' ]; then
     vCaminoAlEjecutable="/opt/chia/resources/app.asar.unpacked/daemon/chia"
     echo ""
-    echo "    El ejecutable está en: $vCaminoAlEjecutable"
+    echo "      El ejecutable de chia está en: $vCaminoAlEjecutable"
     echo ""
   else
     vCaminoAlEjecutable="/home/$vUsuarioNoRoot/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia"
     echo ""
-    echo "    El ejecutable está en: $vCaminoAlEjecutable"
+    echo "      El ejecutable de chia está en: $vCaminoAlEjecutable"
     echo ""
   fi
 # Borrar el archivo anterior
