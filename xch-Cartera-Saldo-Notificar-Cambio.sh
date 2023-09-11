@@ -34,15 +34,15 @@ vUsuarioNoRoot="nipegun"
   touch /tmp/ChiaSaldo.txt
   chmod 777 /tmp/ChiaSaldo.txt
 # Comprobar cartera
-  su - $vUsuarioNoRoot -c "$vCaminoAlEjecutable wallet show | grep 'Total Balance' | head -n1 | grep -v ending | cut -d':' -f2 | sed 's- --g' | cut -d'x' -f1 > /tmp/ChiaSaldo.txt"
+  su - $vUsuarioNoRoot -c "$vCaminoAlEjecutable wallet show | grep 'Total Balance' | head -n1 | grep -v ending | cut -d':' -f2 | sed 's- --g' | cut -d'x' -f1 > /tmp/SaldoCarteraChia.txt"
 # Guardar el balance de la cartera en una variable
-  vSaldoCartera=$(cat /tmp/ChiaSaldo.txt)
+  vSaldoCartera=$(cat /tmp/SaldoCarteraChia.txt)
 # Enviar mensaje si el saldo de la cartera cambia
   echo ""
   echo "    El saldo de la cartera de Chia es: $vSaldoCartera."
   echo ""
   if [[ $vSaldoCartera != "" ]]; then
-     /root/scripts/ParaEsteDebian/Telegramear-Texto.sh "Balance de la cartera de Chia: $vSaldoCartera"
+     /root/scripts/ParaEsteDebian/Telegramear-Texto.sh "El saldo de la cartera de Chia es: $vSaldoCartera"
      # Actualizar este archvo para adaptar al nuevo saldo
        sed -i -e 's|$vSaldoCartera != ""|$vSaldoCartera != "'"$vSaldoCartera"'"|g' /root/scripts/c-scripts/xch-Cartera-Saldo-Notificar-Cambio.sh
   fi
