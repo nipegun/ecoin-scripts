@@ -3,7 +3,7 @@
 vUsuario="nipegun"
 
 # Definir la ubicación del ejecutable
-  if -f [ '/opt/chia/resources/app.asar.unpacked/daemon/chia' ]; then
+  if [ -f '/opt/chia/resources/app.asar.unpacked/daemon/chia' ]; then
     vCaminoAlEjecut="/opt/chia/resources/app.asar.unpacked/daemon/chia"
   else
     vCaminoAlEjecut="/home/$vUsuario/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia"
