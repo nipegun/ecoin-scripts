@@ -31,8 +31,8 @@ vUsuarioNoRoot="nipegun"
     echo ""
   fi
 # Borrar el archivo anterior
-  touch /tmp/ChiaSaldo.txt
-  chmod 777 /tmp/ChiaSaldo.txt
+  touch /tmp/SaldoCarteraChia.txt
+  chmod 777 /tmp/SaldoCarteraChia.txt
 # Comprobar cartera
   su - $vUsuarioNoRoot -c "$vCaminoAlEjecutable wallet show | grep 'Total Balance' | head -n1 | grep -v ending | cut -d':' -f2 | sed 's- --g' | cut -d'x' -f1 > /tmp/SaldoCarteraChia.txt"
 # Guardar el balance de la cartera en una variable
