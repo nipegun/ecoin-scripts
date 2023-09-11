@@ -39,12 +39,12 @@ vUsuarioNoRoot="nipegun"
   vSaldoCartera=$(cat /tmp/ChiaSaldo.txt)
 # Enviar mensaje si el saldo de la cartera cambia
   echo ""
-  echo "    El saldo de la cartera es: $vSaldoCartera."
+  echo "    El saldo de la cartera de Chia es: $vSaldoCartera."
   echo ""
   if [[ $vSaldoCartera != "" ]]; then
-    #/root/scripts/Telegram-EnviarHTML.sh "<b>Estado de cartera de Chia de <a href='tg://user?id=29421797'>NiPeGun</a>:</b>%0A  Versión de nodo: $ChiaVers %0A  Balance de cartera: $ChiaSaldo %0A  Cantidad de parcelas: $ChiaParc %0A  Espacio de parcelas: $ChiaEspac "
-     /root/scripts/Telegram-EnviarHTML.sh "<b>Balance de la cartera de Chia:</b>%0A  Balance de cartera: $vSaldoCartera %0A "
+    #/root/scripts/ParaEsteDebian/Telegramear-HTML.sh "<b>Estado de cartera de Chia de <a href='tg://user?id=29421797'>NiPeGun</a>:</b>%0A  Versión de nodo: $ChiaVers %0A  Balance de cartera: $ChiaSaldo %0A  Cantidad de parcelas: $ChiaParc %0A  Espacio de parcelas: $ChiaEspac "
+     /root/scripts/ParaEsteDebian/Telegramear-HTML.sh "<b>Balance de la cartera de Chia:</b>%0A  Balance de cartera: $vSaldoCartera %0A "
      # Actualizar este archvo para adaptar al nuevo saldo
-       sed -i -e 's|$vChiaSaldo != ""|$vChiaSaldo != "'"$vSaldoCartera"'"|g' /root/scripts/xch-Cartera-AvisarDeCambioDeSaldo.sh
+       sed -i -e 's|$vSaldoCartera != ""|$vSaldoCartera != "'"$vSaldoCartera"'"|g' /root/scripts/c-scripts/xch-Cartera-Notificar-CambioDeSaldo.sh
   fi
 
