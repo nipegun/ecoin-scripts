@@ -137,11 +137,11 @@ elif [ $OS_VERS == "11" ]; then
     sed -i -e "s|C24C4B77698578B46CDB1C109996B0299984FEE46AAC5CD6025786F5C5C61415|$DirCartera|g" ~/Cryptos/CRP/minero/Minar.sh
 
   # Preparar /root/.bash_history
-    echo 'apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove'                                           > /root/.bash_history
-    echo "curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/crp-minero-resetear-en-root-fi.sh | bash"                            >> /root/.bash_history
-    echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Cryptos-CRP-Minero-InstalarOActualizar.sh | bash" >> /root/.bash_history
-    echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/Usuario-Root-AutologuearEnModoTexto-Activar.sh | bash"             >> /root/.bash_history
-    echo "nano /root/.uam/uam.ini"                                                                                                              >> /root/.bash_history
+    echo 'apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove'                                               > /root/.bash_history
+    echo "curl -s https://raw.githubusercontent.com/nipegun/ecoin-scripts/main/crp-minero-resetear-en-root-fi.sh | bash"                            >> /root/.bash_history
+    echo "curl -s https://raw.githubusercontent.com/nipegun/ecoin-scripts/master/SoftInst/ParaCLI/Cryptos-CRP-Minero-InstalarOActualizar.sh | bash" >> /root/.bash_history
+    echo "curl -s https://raw.githubusercontent.com/nipegun/d-scripts/master/Usuario-Root-AutologuearEnModoTexto-Activar.sh | bash"                 >> /root/.bash_history
+    echo "nano /root/.uam/uam.ini"                                                                                                                  >> /root/.bash_history
 
   # Reiniciar el sistema
     echo ""
