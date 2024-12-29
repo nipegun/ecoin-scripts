@@ -9,9 +9,9 @@
 #  Script de NiPeGun para resetear el minero de utopia en el usuario root de Debian
 #
 #  Ejecución remota:
-#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/crp-minero-comprobar-actualizacion.sh | bash
+#  curl -s https://raw.githubusercontent.com/nipegun/ecoin-scripts/main/crp-minero-comprobar-actualizacion.sh | bash
 #
-#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/crp-minero-comprobar-actualizacion.sh | sed 's-vUbicacMinero=/root/Cryptos/CRP/minero/-vUbicacMinero="/TuCarpetaDeMinero/"-g' | bash
+#  curl -s https://raw.githubusercontent.com/nipegun/ecoin-scripts/main/crp-minero-comprobar-actualizacion.sh | sed 's-vUbicacMinero=/root/Cryptos/CRP/minero/-vUbicacMinero="/TuCarpetaDeMinero/"-g' | bash
 # ----------
 
 # Ubicación del minero
