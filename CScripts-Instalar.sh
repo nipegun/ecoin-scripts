@@ -6,10 +6,10 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 # ----------
-# Script de NiPeGun para instalar los c-scripts
+# Script de NiPeGun para instalar los ecoin-scripts
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/c-scripts/main/CScripts-Instalar.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/main/CScripts-Instalar.sh | bash
 # ----------
 
 # Definir variables de color
@@ -21,15 +21,8 @@
 
 # Notificar inicio de ejecución del script
   echo ""
-  echo -e "${vColorAzulClaro}  Iniciando el script de instalación de los c-scripts para el usuario $USER...${vFinColor}"
+  echo -e "${vColorAzulClaro}  Iniciando el script de instalación de los ecoin-scripts para el usuario $USER...${vFinColor}"
   echo ""
-
-# Ver si la variable de entorno HOME termina con una /
-  vCarpetaInst="$HOME"
-  if [[ "$vCarpetaInst" == */ ]]; then
-    # Quitarle la /
-    vCarpetaInst=${vCarpetaInst%?}
-  fi
 
 # Comprobar si hay conexión a Internet antes de sincronizar los c-scripts
   # Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
@@ -37,40 +30,40 @@
       echo ""
       echo -e "${vColorRojo}    El paquete wget no está instalado. Iniciando su instalación...${vFinColor}"
       echo ""
-      su root -c "apt-get -y update"
-      su root -c "apt-get -y install wget"
+      sudo apt-get -y update
+      sudo apt-get -y install wget
     fi
   wget -q --tries=10 --timeout=20 --spider https://github.com
     if [[ $? -eq 0 ]]; then
       echo ""
-      echo "    Instalando los c-scripts con las últimas versiones y descargando nuevos c-scripts si es que existen..."
+      echo "    Instalando los ecoin-scripts con las últimas versiones y descargando nuevos ecoin-scripts si es que existen..."
       echo ""
-      rm $vCarpetaInst/scripts/c-scripts -R 2> /dev/null
-      mkdir $vCarpetaInst/scripts 2> /dev/null
-      cd $vCarpetaInst/scripts
+      rm ~/scripts/ecoin-scripts -R 2> /dev/null
+      mkdir ~/scripts 2> /dev/null
+      cd ~/scripts
       ## Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
         if [[ $(dpkg-query -s git 2>/dev/null | grep installed) == "" ]]; then
           echo ""
           echo -e "${vColorRojo}      El paquete git no está instalado. Iniciando su instalación...${vFinColor}"
           echo ""
-          apt-get -y update
-          apt-get -y install git
+          sudo apt-get -y update
+          sudo apt-get -y install git
           echo ""
         fi
-      git clone --depth=1 https://github.com/nipegun/c-scripts
-      rm $vCarpetaInst/scripts/c-scripts/.git -R 2> /dev/null
-      find $vCarpetaInst/scripts/c-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
+      git clone --depth=1 https://github.com/nipegun/ecoin-scripts
+      rm ~/scripts/ecoin-scripts/.git -R 2> /dev/null
+      find ~/scripts/ecoin-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
       echo ""
-      echo -e "${vColorVerde}      c-scripts sincronizados correctamente.${vFinColor}"
+      echo -e "${vColorVerde}      ecoin-scripts sincronizados correctamente.${vFinColor}"
       echo ""
 
       # Crear los alias
-        mkdir -p $vCarpetaInst/scripts/c-scripts/Alias/
-        $vCarpetaInst/scripts/c-scripts/CScripts-CrearAlias.sh
-        find $vCarpetaInst/scripts/c-scripts/Alias -type f -exec chmod +x {} \;
+        mkdir -p ~/scripts/ecoin-scripts/Alias/
+        ~/scripts/ecoin-scripts/ECoinScripts-CrearAlias.sh
+        find ~/scripts/ecoin-scripts/Alias -type f -exec chmod +x {} \;
     else
       echo ""
-      echo -e "${vColorRojo}    No se pudo iniciar la sincronización de los c-scripts porque no se detectó conexión a Internet.${vFinColor}"
+      echo -e "${vColorRojo}    No se pudo iniciar la sincronización de los ecoin-scripts porque no se detectó conexión a Internet.${vFinColor}"
       echo ""
     fi
 
