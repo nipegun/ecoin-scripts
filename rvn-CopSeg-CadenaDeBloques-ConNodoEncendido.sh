@@ -9,8 +9,8 @@
 # Script de NiPeGun para hacer copia de seguridad de la cadena de bloques de raven con el nodo apagado
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/c-scripts/main/rvn-CopSeg-CadenaDeBloques-ConNodoEncendido.sh | bash
-#   curl -sL https://raw.githubusercontent.com/nipegun/c-scripts/main/rvn-CopSeg-CadenaDeBloques-ConNodoApagado.sh | sed 's-vCarpetaCopSeg="/CopSegInt"-vCarpetaCopSeg="/Copia"-g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/main/rvn-CopSeg-CadenaDeBloques-ConNodoEncendido.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/main/rvn-CopSeg-CadenaDeBloques-ConNodoApagado.sh | sed 's-vCarpetaCopSeg="/CopSegInt"-vCarpetaCopSeg="/Copia"-g' | bash
 # ----------
 
 ColorRojo='\033[1;31m'
