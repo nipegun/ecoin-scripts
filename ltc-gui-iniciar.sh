@@ -20,8 +20,8 @@
   echo ""
   echo "  Iniciando litecoin-qt..."
   echo ""
-  chmod +x $CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh 2> /dev/null
-  $CarpetaHome/scripts/c-scripts/ltc-daemon-parar.sh
+  chmod +x $CarpetaHome/scripts/ecoin-scripts/ltc-daemon-parar.sh 2> /dev/null
+  $CarpetaHome/scripts/ecoin-scripts/ltc-daemon-parar.sh
   # Esperar 5 segundos
     sleep 5
   # Asignar permisos de ejecución
