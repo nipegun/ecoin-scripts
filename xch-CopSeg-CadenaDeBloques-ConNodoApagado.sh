@@ -9,8 +9,8 @@
 #  Script de NiPeGun para hacer copia de seguridad de la cadena de bloques de chia con el nodo apagado
 #
 #  Ejecución remota:
-#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/xch-CopSeg-CadenaDeBloques-ConNodoApagado.sh | bash
-#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/xch-CopSeg-CadenaDeBloques-ConNodoApagado.sh | sed 's-vCarpetaCopSeg="/CopSegInt"-vCarpetaCopSeg="/Copia"-g' | bash
+#  curl -s https://raw.githubusercontent.com/nipegun/ecoin-scripts/main/xch-CopSeg-CadenaDeBloques-ConNodoApagado.sh | bash
+#  curl -s https://raw.githubusercontent.com/nipegun/ecoin-scripts/main/xch-CopSeg-CadenaDeBloques-ConNodoApagado.sh | sed 's-vCarpetaCopSeg="/CopSegInt"-vCarpetaCopSeg="/Copia"-g' | bash
 # ----------
 
 ColorRojo='\033[1;31m'
