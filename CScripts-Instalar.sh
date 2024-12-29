@@ -8,8 +8,11 @@
 # ----------
 # Script de NiPeGun para instalar los ecoin-scripts
 #
-# Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/main/CScripts-Instalar.sh | bash
+# Ejecución remota para usuario normal con permiso sudo:
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/CScripts-Instalar.sh | bash
+#
+# Ejecución remota con el usuario root:
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/CScripts-Instalar.sh | sed 's-sudo--g'| bash
 # ----------
 
 # Definir variables de color
