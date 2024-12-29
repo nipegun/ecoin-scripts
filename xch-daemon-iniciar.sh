@@ -16,9 +16,16 @@
       CarpetaHome=${CarpetaHome%?}
   fi
 
-echo ""
-echo "  Iniciando el demonio de chia (si es que no está activo)..."
-echo ""
-chmox +x $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia 2> /dev/null
-$CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia start node
+# Notificar inicio de ejecución del script
+  echo ""
+  echo "  Iniciando el demonio de chia (si es que no está activo)..."
+  echo ""
+# Comprobar en donde está instalado el nodo
+  if [ -f "$CarpetaHome"/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia ]; then
+    chmod +x $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia 2> /dev/null
+    $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia start node
+  else
+    chmod +x /opt/chia-blockchain/resources/app.asar.unpacked/daemon/chia 2> /dev/null
+    /opt/chia-blockchain/resources/app.asar.unpacked/daemon/chia start node
+  fi
 
