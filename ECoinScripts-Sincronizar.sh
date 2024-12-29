@@ -38,7 +38,7 @@
       echo ""
       echo -e "${vColorAzulClaro}  Sincronizando los ecoin-scripts con las últimas versiones y descargando nuevos ecoin-scripts si es que existen...${vFinColor}"
       echo ""
-      rm ~/scripts/c-scripts -R 2> /dev/null
+      rm ~/scripts/ecoin-scripts -R 2> /dev/null
       mkdir ~/scripts 2> /dev/null
       cd ~/scripts
       # Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
