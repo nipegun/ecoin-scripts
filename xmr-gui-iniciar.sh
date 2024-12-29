@@ -21,8 +21,8 @@
   echo "  Iniciando monero-gui..."
   echo ""
   # Parar primero el demonio
-    chmod +x $CarpetaHome/scripts/c-scripts/xmr-daemon-parar.sh 2> /dev/null
-             $CarpetaHome/scripts/c-scripts/xmr-daemon-parar.sh
+    chmod +x $CarpetaHome/scripts/ecoin-scripts/xmr-daemon-parar.sh 2> /dev/null
+             $CarpetaHome/scripts/ecoin-scripts/xmr-daemon-parar.sh
   # Esperar 5 segundos
     sleep 5
   # Asignar permisos de ejecución
