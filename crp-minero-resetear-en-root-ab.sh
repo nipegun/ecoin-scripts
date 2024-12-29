@@ -9,7 +9,7 @@
 #  Script de NiPeGun para resetear el minero de utopia en el usuario root de Debian
 #
 #  Ejecución remota:
-#  curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/crp-minero-resetear-en-root-ab.sh | bash
+#  curl -s https://raw.githubusercontent.com/nipegun/ecoin-scripts/main/crp-minero-resetear-en-root-ab.sh | bash
 # ----------
 
 ColorRojo='\033[1;31m'
