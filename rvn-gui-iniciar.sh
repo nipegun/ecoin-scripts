@@ -21,8 +21,8 @@
   echo "  Iniciando raven-qt..."
   echo ""
   # Parar primero el daemon
-    chmod +x $vCarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh 2> /dev/null
-             $vCarpetaHome/scripts/c-scripts/rvn-daemon-parar.sh
+    chmod +x $vCarpetaHome/scripts/ecoin-scripts/rvn-daemon-parar.sh 2> /dev/null
+             $vCarpetaHome/scripts/ecoin-scripts/rvn-daemon-parar.sh
   # Esperar 5 segundos
     sleep 5
   # Asignar permisos de ejecución
