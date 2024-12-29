@@ -20,7 +20,11 @@ echo ""
 echo -e "${vColorAzulClaro}  Creando alias para los ecoin-scripts...${vFinColor}"
 echo ""
 
-ln -s ~/scripts/ecoin-scripts/ECoinScripts-Sincronizar.sh ~/scripts/ecoin-scripts/Alias/sinecs
+# Borrar los alias previamente creados
+  rm -rf ~/scripts/ecoin-scripts/Alias/*
+
+# Crear nuevos alias
+  ln -s ~/scripts/ecoin-scripts/ECoinScripts-Sincronizar.sh ~/scripts/ecoin-scripts/Alias/sinecs
 
 echo ""
 echo -e "${vColorVerde}    Alias creados. Deberías poder ejecutar los ecoin-scripts escribiendo el nombre de su alias.${vFinColor}"
