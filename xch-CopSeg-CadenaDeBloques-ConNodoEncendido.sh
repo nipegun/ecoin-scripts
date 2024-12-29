@@ -24,7 +24,7 @@ vCarpetaCopSeg="/CopSegInt"
      vCarpetaUsuario="$HOME"
      if [[ "$vCarpetaUsuario" == */ ]]; then
        # Quitarle la /
-       vCarpetaUsuario=${vCarpetaUsuario%?}
+       vCarpetaUsuario="${vCarpetaUsuario%?}"
      fi
 
 # Definir la versión de la base de datos
@@ -56,6 +56,6 @@ vCarpetaCopSeg="/CopSegInt"
   echo ""
   echo "  Ejecutando copia de seguridad en caliente de la cadena de bloques de Chia..."
   echo ""
-  rm -f $vCarpDestinoCopSeg/blockchain_"$vVersRedPrinc"_mainnet.sqlite 2> /dev/null
-  sqlite3 $vCarpetaUsuario/.chia/mainnet/db/blockchain_"$vVersRedPrinc"_mainnet.sqlite "vacuum into '$vCarpDestinoCopSeg/blockchain_"$vVersRedPrinc"_mainnet.sqlite'"
+  rm -f "$vCarpDestinoCopSeg"/blockchain_"$vVersRedPrinc"_mainnet.sqlite 2> /dev/null
+  sqlite3 "$vCarpetaUsuario"/.chia/mainnet/db/blockchain_"$vVersRedPrinc"_mainnet.sqlite "vacuum into '$vCarpDestinoCopSeg/blockchain_"$vVersRedPrinc"_mainnet.sqlite'"
 
