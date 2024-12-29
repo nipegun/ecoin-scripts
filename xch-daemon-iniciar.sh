@@ -25,7 +25,7 @@
     chmod +x $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia 2> /dev/null
     $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia start node
   else
-    chmod +x /opt/chia-blockchain/resources/app.asar.unpacked/daemon/chia 2> /dev/null
-    /opt/chia-blockchain/resources/app.asar.unpacked/daemon/chia start node
+    chmod +x /opt/chia/resources/app.asar.unpacked/daemon/chia 2> /dev/null
+    /opt/chia/resources/app.asar.unpacked/daemon/chia start node
   fi
 
