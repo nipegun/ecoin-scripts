@@ -21,8 +21,8 @@
   echo "  Iniciando argentum-qt..."
   echo ""
   # Parar primero el daemon
-    chmod +x $CarpetaHome/scripts/c-scripts/arg-daemon-parar.sh 2> /dev/null
-             $CarpetaHome/scripts/c-scripts/arg-daemon-parar.sh
+    chmod +x $CarpetaHome/scripts/ecoin-scripts/arg-daemon-parar.sh 2> /dev/null
+             $CarpetaHome/scripts/ecoin-scripts/arg-daemon-parar.sh
   # Esperar 5 segundos
     sleep 5
   # Asignar permisos de ejecución
