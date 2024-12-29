@@ -21,8 +21,8 @@
   echo "  Iniciando bitcoin-qt..."
   echo ""
   # Parar primero el daemon
-    chmod +x $vCarpetaHome/scripts/c-scripts/bch-daemon-parar.sh 2> /dev/null
-             $vCarpetaHome/scripts/c-scripts/bch-daemon-parar.sh
+    chmod +x $vCarpetaHome/scripts/ecoin-scripts/bch-daemon-parar.sh 2> /dev/null
+             $vCarpetaHome/scripts/ecoin-scripts/bch-daemon-parar.sh
   # Esperar 5 segundos
     sleep 5
   # Asignar permisos de ejecución
