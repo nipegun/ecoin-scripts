@@ -13,7 +13,7 @@
    CarpetaHome="$HOME"
    if [[ "$CarpetaHome" == */ ]]; then
      # Quitarle la /
-     CarpetaHome=${CarpetaHome%?}
+     CarpetaHome="${CarpetaHome%?}"
    fi
 
 # Iniciar el proceso de lanzamiento gráfico del nodo
@@ -21,12 +21,12 @@
   echo "  Iniciando chia-blockchain..."
   echo ""
   # Parar primero el daemon
-    chmod +x $CarpetaHome/scripts/ecoin-scripts/xch-daemon-parar.sh 2> /dev/null
-             $CarpetaHome/scripts/ecoin-scripts/xch-daemon-parar.sh
+    chmod +x "$CarpetaHome"/scripts/ecoin-scripts/xch-daemon-parar.sh 2> /dev/null
+             "$CarpetaHome"/scripts/ecoin-scripts/xch-daemon-parar.sh
   # Esperar 5 segundos
     sleep 5
   # Asignar permisos de ejecución
-    chmod +x $CarpetaHome/Cryptos/XCH/chia-blockchain/chia-blockchain 2> /dev/null
+    chmod +x "$CarpetaHome"/Cryptos/XCH/chia-blockchain/chia-blockchain 2> /dev/null
   # Lanzar la app gráfica
-    $CarpetaHome/Cryptos/XCH/chia-blockchain/chia-blockchain
+    "$CarpetaHome"/Cryptos/XCH/chia-blockchain/chia-blockchain
 
