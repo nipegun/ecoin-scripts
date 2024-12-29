@@ -25,6 +25,6 @@ echo ""
     $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia show -s
   else
     chmod +x /opt/chia/resources/app.asar.unpacked/daemon/chia 2> /dev/null
-    /opt/chia-blockchain/resources/app.asar.unpacked/daemon/chia show -s
+    /opt/chia/resources/app.asar.unpacked/daemon/chia show -s
   fi
 
