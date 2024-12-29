@@ -31,7 +31,7 @@
   if [ -d ~/scripts/ecoin-scripts ]; then
     echo ""
     echo -e "${vColorRojo}    La carpeta ~/scripts/ecoin-scripts/ ya existe. Los ecoin-scripts ya están instalados.${vFinColor}"
-    echo -e "${vColorRojo}    Para sincronizarlo con las últimas versiones, ejecuta:${vFinColor}"
+    echo -e "${vColorRojo}    Para sincronizarlos con las últimas versiones, ejecuta:${vFinColor}"
     echo ""
     echo -e "${vColorRojo}      ~/scripts/ecoin-scripts/ECoinScripts-Sincronizar.sh${vFinColor}"
     echo ""
