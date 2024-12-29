@@ -69,7 +69,7 @@
     find ~/scripts/ecoin-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
   # Notificar fin de la instalación
     echo ""
-    echo -e "${vColorVerde}      ecoin-scripts sincronizados correctamente.${vFinColor}"
+    echo -e "${vColorVerde}    ecoin-scripts instalados correctamente.${vFinColor}"
     echo ""
   # Crear los alias
     mkdir -p ~/scripts/ecoin-scripts/Alias/
