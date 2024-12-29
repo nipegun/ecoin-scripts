@@ -13,12 +13,17 @@
   CarpetaHome="$HOME"
   if [[ "$CarpetaHome" == */ ]]; then
     # Quitarle la /
-      CarpetaHome=${CarpetaHome%?}
+      CarpetaHome="${CarpetaHome%?}"
   fi
 
 echo ""
 echo "  Parando el demonio de chia (si es que está activo)..."
 echo ""
-chmox +x $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia 2> /dev/null
-$CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia stop farmer
-
+# Comprobar en donde está instalado el nodo
+  if [ -f "$CarpetaHome"/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia ]; then
+    chmod +x "$CarpetaHome"/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia 2> /dev/null
+    "$CarpetaHome"/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia stop farmer
+  else
+    chmod +x /opt/chia/resources/app.asar.unpacked/daemon/chia 2> /dev/null
+    /opt/chia/resources/app.asar.unpacked/daemon/chia stop farmer
+  fi
