@@ -21,8 +21,8 @@
   echo "  Iniciando raptoreum-qt..."
   echo ""
   # Parar primero el daemon
-    chmod +x $CarpetaHome/scripts/c-scripts/rtm-daemon-parar.sh 2> /dev/null
-    $CarpetaHome/scripts/c-scripts/rtm-daemon-parar.sh
+    chmod +x $CarpetaHome/scripts/ecoin-scripts/rtm-daemon-parar.sh 2> /dev/null
+    $CarpetaHome/scripts/ecoin-scripts/rtm-daemon-parar.sh
   # Esperar 5 segundos
     sleep 5
   # Asignar permisos de ejecución
