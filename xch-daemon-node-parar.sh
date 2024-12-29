@@ -6,7 +6,7 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 # ----------
-#  Script de NiPeGun para parar el daemon de chia
+#  Script de NiPeGun para parar el nodo de chia
 # ----------
 
 # Ver si la variable de entorno HOME termina con una /
@@ -17,13 +17,13 @@
   fi
 
 echo ""
-echo "  Parando el demonio de chia (si es que está activo)..."
+echo "  Parando el nodo de chia (si es que está activo)..."
 echo ""
 # Comprobar en donde está instalado el nodo
   if [ -f "$CarpetaHome"/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia ]; then
     chmod +x "$CarpetaHome"/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia 2> /dev/null
-    "$CarpetaHome"/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia stop farmer
+    "$CarpetaHome"/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia stop node
   else
     chmod +x /opt/chia/resources/app.asar.unpacked/daemon/chia 2> /dev/null
-    /opt/chia/resources/app.asar.unpacked/daemon/chia stop farmer
+    /opt/chia/resources/app.asar.unpacked/daemon/chia stop node
   fi
