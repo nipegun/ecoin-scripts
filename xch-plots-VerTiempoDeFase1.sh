@@ -13,8 +13,8 @@
    CarpetaHome="$HOME"
    if [[ "$CarpetaHome" == */ ]]; then
      # Quitarle la /
-     CarpetaHome=${CarpetaHome%?}
+     CarpetaHome="${CarpetaHome%?}"
    fi
 
-find $CarpetaHome/.chia/mainnet/plotter -type f -exec cat {} \; | grep "ime for phase 1"
+find "$CarpetaHome"/.chia/mainnet/plotter -type f -exec cat {} \; | grep "ime for phase 1"
 
