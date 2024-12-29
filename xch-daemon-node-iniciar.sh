@@ -13,12 +13,12 @@
   CarpetaHome="$HOME"
   if [[ "$CarpetaHome" == */ ]]; then
     # Quitarle la /
-      CarpetaHome=${CarpetaHome%?}
+      CarpetaHome="${CarpetaHome%?}"
   fi
 
 # Notificar inicio de ejecución del script
   echo ""
-  echo "  Iniciando el demonio de chia (si es que no está activo)..."
+  echo "  Iniciando el nodo de chia (si es que no está activo)..."
   echo ""
 
 # Iniciar el nodo en modo daemon
