@@ -6,7 +6,13 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 # ----------
-# Script de NiPeGun para crear los alias de los ecoin-scripts 
+# Script de NiPeGun para crear los alias de los ecoin-scripts
+#
+# Ejecución remota para usuario normal con permiso sudo:
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/ECoinScripts-CrearAlias.sh | bash
+#
+# Ejecución remota con el usuario root:
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/ECoinScripts-CrearAlias.sh | sed 's-sudo--g'| bash
 # ----------
 
 # Definir variables de color
