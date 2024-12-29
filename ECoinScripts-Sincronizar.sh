@@ -6,10 +6,13 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 # ----------
-# Script de NiPeGun para sincronizar los c-scripts
+# Script de NiPeGun para sincronizar los ecoin-scripts
 #
-# Ejecución remota:
-#   curl -s https://raw.githubusercontent.com/nipegun/c-scripts/main/CScripts-Sincronizar.sh | bash
+# Ejecución remota para usuario normal con permiso sudo:
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/ECoinScripts-Sincronizar.sh | bash
+#
+# Ejecución remota con el usuario root:
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/ECoinScripts-Sincronizar.sh | sed 's-sudo--g'| bash
 # ----------
 
 # Definir variables de color
@@ -19,47 +22,47 @@
   vColorRojo='\033[1;31m'
   vFinColor='\033[0m'
 
-# Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
-  if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
-    echo ""
-    echo -e "${vColorRojo}  El paquete wget no está instalado. Iniciando su instalación...${FinColor}"
-    echo ""
-    su root -c "apt-get -y update"
-    su root -c "apt-get -y install wget"
-  fi
-
 # Comprobar si hay conexión a Internet antes de sincronizar los d-scripts
-wget -q --tries=10 --timeout=20 --spider https://github.com
+  # Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
+    if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
+      echo ""
+      echo -e "${vColorRojo}  El paquete wget no está instalado. Iniciando su instalación...${FinColor}"
+      echo ""
+      sudo apt-get -y update
+      sudo apt-get -y install wget
+    fi
+  wget -q --tries=10 --timeout=20 --spider https://github.com
+
   if [[ $? -eq 0 ]]; then
     # Sincronizar c-scripts
       echo ""
-      echo -e "${vColorAzulClaro}  Sincronizando los c-scripts con las últimas versiones y descargando nuevos c-scripts si es que existen...${vFinColor}"
+      echo -e "${vColorAzulClaro}  Sincronizando los ecoin-scripts con las últimas versiones y descargando nuevos ecoin-scripts si es que existen...${vFinColor}"
       echo ""
-      rm /root/scripts/c-scripts -R 2> /dev/null
-      mkdir /root/scripts 2> /dev/null
-      cd /root/scripts
+      rm ~/scripts/c-scripts -R 2> /dev/null
+      mkdir ~/scripts 2> /dev/null
+      cd ~/scripts
       # Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
         if [[ $(dpkg-query -s git 2>/dev/null | grep installed) == "" ]]; then
           echo ""
           echo -e "${vColorRojo}    El paquete git no está instalado. Iniciando su instalación...${vFinColor}"
           echo ""
-          apt-get -y update > /dev/null
-          apt-get -y install git
+          sudo apt-get -y update > /dev/null
+          sudo apt-get -y install git
           echo ""
         fi
-      git clone --depth=1 https://github.com/nipegun/c-scripts
-      rm /root/scripts/c-scripts/.git -R 2> /dev/null
-      find /root/scripts/c-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
+      git clone --depth=1 https://github.com/nipegun/ecoin-scripts
+      rm ~/scripts/ecoin-scripts/.git -R 2> /dev/null
+      find ~/scripts/ecoin-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
       echo ""
-      echo -e "${vColorVerde}    c-scripts sincronizados correctamente.${vFinColor}"
+      echo -e "${vColorVerde}    ecoin-scripts sincronizados correctamente.${vFinColor}"
       echo ""
     # Crear los alias
-      mkdir -p /root/scripts/c-scripts/Alias/
-      /root/scripts/c-scripts/CScripts-CrearAlias.sh
-      find /root/scripts/c-scripts/Alias -type f -exec chmod +x {} \;
+      mkdir -p ~/scripts/ecoin-scripts/Alias/
+      ~/scripts/ecoin-scripts/ECoinScripts-CrearAlias.sh
+      find ~/scripts/ecoin-scripts/Alias -type f -exec chmod +x {} \;
   else
     echo ""
-    echo -e "${vColorRojo}  No se pudo iniciar la sincronización de los c-scripts porque no se detectó conexión a Internet.${vFinColor}"
+    echo -e "${vColorRojo}  No se pudo iniciar la sincronización de los ecoin-scripts porque no se detectó conexión a Internet.${vFinColor}"
     echo ""
   fi
 
