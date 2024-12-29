@@ -5,19 +5,20 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
-#------------------------------------------------------
+# ----------
 #  Script de NiPeGun para iniciar el daemon de chia
-#------------------------------------------------------
+# ----------
 
-## Ver si la variable de entorno HOME termina con una /
-   CarpetaHome="$HOME"
-   if [[ "$CarpetaHome" == */ ]]; then
-     # Quitarle la /
-     CarpetaHome=${CarpetaHome%?}
-   fi
+# Ver si la variable de entorno HOME termina con una /
+  CarpetaHome="$HOME"
+  if [[ "$CarpetaHome" == */ ]]; then
+    # Quitarle la /
+      CarpetaHome=${CarpetaHome%?}
+  fi
 
 echo ""
-echo "  Iniciando monerod..."
+echo "  Iniciando el demonio de chia (si es que no está activo)..."
 echo ""
-chmod +x $CarpetaHome/Cryptos/XMR/bin/monerod 2> /dev/null
-$CarpetaHome/Cryptos/XMR/bin/monerod --detach
+chmox +x $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia 2> /dev/null
+$CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia start node
+
