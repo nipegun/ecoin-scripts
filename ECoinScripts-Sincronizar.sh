@@ -52,11 +52,11 @@
         fi
       git clone --depth=1 https://github.com/nipegun/ecoin-scripts
       echo ""
-      echo "  Borrando archivos innecesarios..."
+      echo "    Borrando archivos innecesarios..."
       echo ""
-      rm ~/scripts/ecoin-scripts/.git -R 2> /dev/null
+      rm -rf ~/scripts/ecoin-scripts/.git
       echo ""
-      echo "  Asignando permisos de ejecución a todos los scripts..."
+      echo "    Asignando permisos de ejecución a todos los scripts..."
       echo ""
       find ~/scripts/ecoin-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
       echo ""
