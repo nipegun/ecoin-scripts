@@ -20,7 +20,7 @@ echo ""
 echo -e "${vColorAzulClaro}  Creando alias para los ecoin-scripts...${vFinColor}"
 echo ""
 
-ln -s ~/scripts/ecoin-scripts/Discos-NVMe-Salud.sh              ~/scripts/ecoin-scripts/Alias/dnvmes
+ln -s ~/scripts/ecoin-scripts/ECoinScripts-Sincronizar.sh ~/scripts/ecoin-scripts/Alias/sinecs
 
 echo ""
 echo -e "${vColorVerde}    Alias creados. Deberías poder ejecutar los ecoin-scripts escribiendo el nombre de su alias.${vFinColor}"
