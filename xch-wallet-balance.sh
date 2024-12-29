@@ -22,8 +22,8 @@ echo ""
 # Comprobar en donde está instalado el nodo
   if [ -f "$CarpetaHome"/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia ]; then
     chmod +x $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia 2> /dev/null
-    $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia wallet show | grep 'Total Balance' | head -n1 | grep -v ending | cut -d':' -f2 | sed 's- --g' | cut -d'x' -f1 | sed 's-.-,-g'
+    $CarpetaHome/Cryptos/XCH/chia-blockchain/resources/app.asar.unpacked/daemon/chia wallet show | grep 'Total Balance' | head -n1 | grep -v ending | cut -d':' -f2 | sed 's- --g' | cut -d'x' -f1
   else
     chmod +x /opt/chia/resources/app.asar.unpacked/daemon/chia 2> /dev/null
-    /opt/chia/resources/app.asar.unpacked/daemon/chia wallet show | grep 'Total Balance' | head -n1 | grep -v ending | cut -d':' -f2 | sed 's- --g' | cut -d'x' -f1 | sed 's-.-,-g'
+    /opt/chia/resources/app.asar.unpacked/daemon/chia wallet show | grep 'Total Balance' | head -n1 | grep -v ending | cut -d':' -f2 | sed 's- --g' | cut -d'x' -f1
   fi
