@@ -6,10 +6,13 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 # ----------
-# Script de NiPeGun para sincronizar los c-scripts
+# Script de NiPeGun para sincronizar los ecoin-scripts
 #
-# Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/c-scripts/main/CScripts-Sincronizar-UsuarioNoRoot.sh | bash
+# Ejecución remota para usuario normal con permiso sudo:
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/ECoinScripts-Instalar.sh | bash
+#
+# Ejecución remota con el usuario root:
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/ECoinScripts-Instalar.sh | sed 's-sudo--g'| bash
 # ----------
 
 # Definir variables de color
@@ -39,9 +42,9 @@
   wget -q --tries=10 --timeout=20 --spider https://github.com
   if [[ $? -eq 0 ]]; then
     echo ""
-    echo -e "${vColorAzulClaro}  Sincronizando los c-scripts con las últimas versiones y descargando nuevos c-scripts si es que existen...${vFinColor}"
+    echo -e "${vColorAzulClaro}  Sincronizando los ecoin-scripts con las últimas versiones y descargando nuevos ecoin-scripts si es que existen...${vFinColor}"
     echo ""
-    rm $vCarpetaHome/scripts/c-scripts -R 2> /dev/null
+    rm $vCarpetaHome/scripts/ecoin-scripts -R 2> /dev/null
     mkdir $vCarpetaHome/scripts 2> /dev/null
     cd $vCarpetaHome/scripts
     # Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
@@ -53,19 +56,19 @@
         su root -c "apt-get -y install git"
         echo ""
       fi
-    git clone --depth=1 https://github.com/nipegun/c-scripts
-    mkdir -p $vCarpetaHome/scripts/c-scripts/Alias/
-    rm $vCarpetaHome/scripts/c-scripts/.git -R 2> /dev/null
-    find $vCarpetaHome/scripts/c-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
-    $vCarpetaHome/scripts/c-scripts/CScripts-CrearAlias.sh
-    find $vCarpetaHome/scripts/c-scripts/Alias -type f -exec chmod +x {} \;
+    git clone --depth=1 https://github.com/nipegun/ecoin-scripts
+    mkdir -p $vCarpetaHome/scripts/ecoin-scripts/Alias/
+    rm $vCarpetaHome/scripts/ecoin-scripts/.git -R 2> /dev/null
+    find $vCarpetaHome/scripts/ecoin-scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
+    $vCarpetaHome/scripts/ecoin-scripts/CScripts-CrearAlias.sh
+    find $vCarpetaHome/scripts/ecoin-scripts/Alias -type f -exec chmod +x {} \;
     
     echo ""
-    echo -e "${vColorVerde}  c-scripts sincronizados correctamente.${vFinColor}"
+    echo -e "${vColorVerde}  ecoin-scripts sincronizados correctamente.${vFinColor}"
     echo ""
   else
     echo ""
-    echo -e "${vColorRojo}  No se pudo iniciar la sincronización de los c-scripts porque no se detectó conexión a Internet.${vFinColor}"
+    echo -e "${vColorRojo}  No se pudo iniciar la sincronización de los ecoin-scripts porque no se detectó conexión a Internet.${vFinColor}"
     echo ""
   fi
 
