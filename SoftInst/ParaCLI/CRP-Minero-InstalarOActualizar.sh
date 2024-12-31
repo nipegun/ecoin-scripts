@@ -9,10 +9,10 @@
 # Script de NiPeGun para instalar y configurar los mineros para las diferentes criptomonedas
 #
 # Ejecución remota:
-#  curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/master/SoftInst/ParaCLI/Cryptos-CRP-Minero-InstalarOActualizar.sh | bash
+#  curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/master/SoftInst/ParaCLI/CRP-Minero-InstalarOActualizar.sh | bash
 #
 # Ejecución remota con cambio de llave pública:
-#  curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/master/SoftInst/ParaCLI/Cryptos-CRP-Minero-InstalarOActualizar.sh | sed 's/^PublicKey.*/PublicKey=TuClave/g' | bash
+#  curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/master/SoftInst/ParaCLI/CRP-Minero-InstalarOActualizar.sh | sed 's/^PublicKey.*/PublicKey=TuClave/g' | bash
 # ----------
 
 vPublicKey=C24C4B77698578B46CDB1C109996B0299984FEE46AAC5CD6025786F5C5C61415
