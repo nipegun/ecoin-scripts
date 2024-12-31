@@ -9,7 +9,7 @@
 # Script de NiPeGun para instalar y configurar Pools Cripto en Debian
 #
 # Ejecución remota:
-#  curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Cryptos-Pools-InstalarYConfigurar.sh | bash
+#  curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/SoftInst/ParaCLI/Pools-InstalarYConfigurar.sh | bash
 
 
 UsuarioNoRoot="pooladmin"
