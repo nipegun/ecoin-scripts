@@ -9,7 +9,7 @@
 # Script de NiPeGun para instalar y configurar los mineros para las diferentes criptomonedas
 #
 # Ejecución remota:
-#  curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Cryptos-Mineros-InstalarYConfigurar.sh | bash
+#  curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/SoftInst/ParaCLI/Mineros-InstalarYConfigurar.sh | bash
 # ----------
 
 cColorRojo='\033[1;31m'
