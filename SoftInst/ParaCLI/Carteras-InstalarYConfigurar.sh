@@ -9,7 +9,7 @@
 # Script de NiPeGun para instalar y configurar diferentes carteras de criptomonedas en Debian
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Cryptos-Carteras-InstalarYConfigurar.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/SoftInst/ParaCLI/Carteras-InstalarYConfigurar.sh | bash
 # ----------
 
 UsuarioNoRoot="nipegun"
