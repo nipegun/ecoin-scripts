@@ -9,10 +9,10 @@
 # Script de NiPeGun para instalar y configurar diferentes carteras de criptomonedas en Debian
 #
 # Ejecución remota normal (Se ejecuta con los cores reales que tiene el núcleo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Cryptos-XMR-Minero-BajarCompilarYEjecutar.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/SoftInst/ParaCLI/XMR-Minero-BajarCompilarYEjecutar.sh | bash
 #
 # Ejecución remota personalizada (Se ejecuta con los cores que le pases como parámetro):
-#   curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Cryptos-XMR-Minero-BajarCompilarYEjecutar.sh | sed 's-#vHilos=-vHilos=32-g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/SoftInst/ParaCLI/XMR-Minero-BajarCompilarYEjecutar.sh | sed 's-#vHilos=-vHilos=32-g' | bash
 # ----------
 
 vUsuario="root"
