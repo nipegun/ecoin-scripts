@@ -9,10 +9,10 @@
 # Script de NiPeGun para instalar y configurar el messenger de Utopia en Debian
 #
 # Ejecución remota:
-#  curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaGUI/Cryptos-CRP-InstalarOActualizar.sh | bash
+#  curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/SoftInst/ParaGUI/CRP-Nodo-InstalarOActualizar.sh | bash
 #
 #  Cambiando el nombre de usuario
-#  curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaGUI/Cryptos-Nodo-CRP-InstalarOActualizar.sh | sed 's/nipegun/usuarionuevo/g' | bash
+#  curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/SoftInst/ParaGUI/CRP-Nodo-InstalarOActualizar.sh | sed 's/nipegun/usuarionuevo/g' | bash
 # ----------
 
 UsuarioNoRoot="nipegun"
@@ -41,51 +41,31 @@ cFinColor='\033[0m'
     cVerSO=$(uname -r)
   fi
 
-if [ $cVerSO == "7" ]; then
+if [ $cVerSO == "13" ]; then
 
   echo ""
-  echo "  Iniciando el script de instalación de Utopia Messenger para Debian 7 (Wheezy)..."
-  echo ""
-
-  echo ""
-  echo "  Comandos para Debian 7 todavía no preparados. Prueba ejecutarlo en otra versión de Debian."
-  echo ""
-
-elif [ $cVerSO == "8" ]; then
-
-  echo ""
-  echo "  Iniciando el script de instalación de Utopia Messenger para Debian 8 (Jessie)..."
+  echo "  Iniciando el script de instalación de Utopia Messenger para Debian 13 (x)..."
   echo ""
 
   echo ""
-  echo "  Comandos para Debian 8 todavía no preparados. Prueba ejecutarlo en otra versión de Debian."
+  echo "  Comandos para Debian 13 todavía no preparados. Prueba ejecutarlo en otra versión de Debian."
   echo ""
 
-elif [ $cVerSO == "9" ]; then
+elif [ $cVerSO == "12" ]; then
 
   echo ""
-  echo "  Iniciando el script de instalación de Utopia Messenger para Debian 9 (Stretch)..."
-  echo ""
-
-  echo ""
-  echo "  Comandos para Debian 9 todavía no preparados. Prueba ejecutarlo en otra versión de Debian."
-  echo ""
-
-elif [ $cVerSO == "10" ]; then
-
-  echo ""
-  echo "  Iniciando el script de instalación de Utopia Messenger para Debian 10 (Buster)..."
+  echo "  Iniciando el script de instalación de Utopia Messenger para Debian 12 (Bookworm)..."
   echo ""
 
   echo ""
-  echo "  Comandos para Debian 10 todavía no preparados. Prueba ejecutarlo en otra versión de Debian."
+  echo "  Comandos para Debian 12 todavía no preparados. Prueba ejecutarlo en otra versión de Debian."
   echo ""
 
 elif [ $cVerSO == "11" ]; then
 
   echo ""
   echo "  Iniciando el script de instalación de Utopia Messenger para Debian 11 (Bullseye)..." 
-echo ""
+  echo ""
 
   # Comprobar si el paquete dialog está instalado. Si no lo está, instalarlo.
      if [[ $(dpkg-query -s dialog 2>/dev/null | grep installed) == "" ]]; then
@@ -97,10 +77,10 @@ echo ""
      fi
   menu=(dialog --timeout 5 --checklist "¿Donde quieres instalar Utopia Messenger?:" 22 76 16)
     opciones=(
-      1 "Instalar en ubicación por defecto (dpkg -i) (/opt)." off
-      2 "Instalar en la carpeta del usuario no root." off
+      1 "Instalar en ubicación por defecto (dpkg -i) (/opt)."         off
+      2 "Instalar en la carpeta del usuario no root."                 off
       3 "Actualizar el messenger en su ubicación por defecto (/opt)." off
-      4 "Actualizar el messenger para el usuario no root." off
+      4 "Actualizar el messenger para el usuario no root."            off
     )
     choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
       clear
@@ -135,7 +115,8 @@ echo ""
                 # Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
                    if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
                      echo ""
-                     echo "  wget no está instalado. Iniciando su instalación..."                     echo ""
+                     echo "  wget no está instalado. Iniciando su instalación..."
+                     echo ""
                      apt-get -y update
                      apt-get -y install wget
                      echo ""
@@ -198,7 +179,8 @@ echo ""
                 # Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
                   if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
                     echo ""
-                    echo "  wget no está instalado. Iniciando su instalación..."                    echo ""
+                    echo "  wget no está instalado. Iniciando su instalación..."
+                    echo ""
                     apt-get -y update && apt-get -y install wget
                     echo ""
                   fi
@@ -211,7 +193,8 @@ echo ""
                 # Comprobar si el paquete binutils está instalado. Si no lo está, instalarlo.
                   if [[ $(dpkg-query -s binutils 2>/dev/null | grep installed) == "" ]]; then
                     echo ""
-                    echo "  binutils no está instalado. Iniciando su instalación..."                    echo ""
+                    echo "  binutils no está instalado. Iniciando su instalación..."
+                    echo ""
                     apt-get -y update && apt-get -y install binutils
                     echo ""
                   fi
@@ -223,7 +206,8 @@ echo ""
                 # Comprobar si el paquete tar está instalado. Si no lo está, instalarlo.
                   if [[ $(dpkg-query -s tar 2>/dev/null | grep installed) == "" ]]; then
                     echo ""
-                    echo "  tar no está instalado. Iniciando su instalación..."                    echo ""
+                    echo "  tar no está instalado. Iniciando su instalación..."
+                    echo ""
                     apt-get -y update && apt-get -y install tar
                     echo ""
                   fi
@@ -232,7 +216,8 @@ echo ""
 
                 # Instalar dependencias
                   echo ""
-                  echo "  Instalando dependencias necesarias..."                  echo ""
+                  echo "  Instalando dependencias necesarias..."
+                  echo ""
 
                   # Por orden de requerimiento
                     apt-get -y install libxcb-screensaver0
@@ -276,7 +261,8 @@ echo ""
 
                 # Crear la carpeta para el usuario no root
                   echo ""
-                  echo "  Creando la carpeta para el usuario no root..."                  echo ""
+                  echo "  Creando la carpeta para el usuario no root..."
+                  echo ""
                   rm -rf /home/$UsuarioNoRoot/Cryptos/CRP/messenger/ 2> /dev/null
                   mkdir -p /home/$UsuarioNoRoot/Cryptos/CRP/ 2> /dev/null
                   mv /root/SoftInst/Cryptos/CRP/opt/utopia/* /home/$UsuarioNoRoot/Cryptos/CRP/messenger/
@@ -308,7 +294,8 @@ echo ""
 
                 # Borrar archivos sobrantes
                   #echo ""
-                  #echo "  Borrando archivos sobrantes..."                  #echo ""
+                  #echo "  Borrando archivos sobrantes..."
+                  #echo ""
                   #rm -rf /root/SoftInst/Cryptos/CRP/opt/
                   #rm -rf /root/SoftInst/Cryptos/CRP/usr/
                   #rm -rf /root/SoftInst/Cryptos/CRP/control.tar.gz
@@ -318,7 +305,8 @@ echo ""
 
                 # Reparar permisos
                   echo ""
-                  echo "  Reparando permisos..."                  echo ""
+                  echo "  Reparando permisos..."
+                  echo ""
                   chown $UsuarioNoRoot:$UsuarioNoRoot /home/$UsuarioNoRoot/Cryptos/
                   chown $UsuarioNoRoot:$UsuarioNoRoot /home/$UsuarioNoRoot/Cryptos/CRP/ -R
                   #find /home/$UsuarioNoRoot/Cryptos/CRP/ -type d -exec chmod 750 {} \;
@@ -366,7 +354,8 @@ echo ""
                 # Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
                    if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
                      echo ""
-                     echo "  wget no está instalado. Iniciando su instalación..."                     echo ""
+                     echo "  wget no está instalado. Iniciando su instalación..."
+                     echo ""
                      apt-get -y update && apt-get -y install wget
                      echo ""
                    fi
@@ -406,7 +395,8 @@ echo ""
                 # Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
                   if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
                     echo ""
-                    echo "  wget no está instalado. Iniciando su instalación..."                    echo ""
+                    echo "  wget no está instalado. Iniciando su instalación..."
+                    echo ""
                     apt-get -y update && apt-get -y install wget
                     echo ""
                   fi
@@ -419,7 +409,8 @@ echo ""
                 # Comprobar si el paquete binutils está instalado. Si no lo está, instalarlo.
                   if [[ $(dpkg-query -s binutils 2>/dev/null | grep installed) == "" ]]; then
                     echo ""
-                    echo "  binutils no está instalado. Iniciando su instalación..."                    echo ""
+                    echo "  binutils no está instalado. Iniciando su instalación..."
+                    echo ""
                     apt-get -y update && apt-get -y install binutils
                     echo ""
                   fi
@@ -431,7 +422,8 @@ echo ""
                 # Comprobar si el paquete tar está instalado. Si no lo está, instalarlo.
                   if [[ $(dpkg-query -s tar 2>/dev/null | grep installed) == "" ]]; then
                     echo ""
-                    echo "  tar no está instalado. Iniciando su instalación..."                    echo ""
+                    echo "  tar no está instalado. Iniciando su instalación..."
+                    echo ""
                     apt-get -y update && apt-get -y install tar
                     echo ""
                   fi
@@ -440,7 +432,8 @@ echo ""
 
                 # Crear la carpeta para el usuario no root
                   echo ""
-                  echo "  Creando la carpeta para el usuario no root..."                  echo ""
+                  echo "  Creando la carpeta para el usuario no root..."
+                  echo ""
                   rm -rf /home/$UsuarioNoRoot/Cryptos/CRP/messenger/ 2> /dev/null
                   mkdir -p /home/$UsuarioNoRoot/Cryptos/CRP/ 2> /dev/null
                   mv /root/SoftInst/Cryptos/CRP/opt/utopia/* /home/$UsuarioNoRoot/Cryptos/CRP/messenger/
@@ -454,7 +447,8 @@ echo ""
 
                 # Reparar permisos
                   echo ""
-                  echo "  Reparando permisos..."                  echo ""
+                  echo "  Reparando permisos..."
+                  echo ""
                   chown $UsuarioNoRoot:$UsuarioNoRoot /home/$UsuarioNoRoot/Cryptos/
                   chown $UsuarioNoRoot:$UsuarioNoRoot /home/$UsuarioNoRoot/Cryptos/CRP/ -R
                   #find /home/$UsuarioNoRoot/Cryptos/CRP/ -type d -exec chmod 750 {} \;
@@ -478,6 +472,46 @@ echo ""
           esac
 
         done
+
+elif [ $cVerSO == "10" ]; then
+
+  echo ""
+  echo "  Iniciando el script de instalación de Utopia Messenger para Debian 10 (Buster)..."
+  echo ""
+
+  echo ""
+  echo "  Comandos para Debian 10 todavía no preparados. Prueba ejecutarlo en otra versión de Debian."
+  echo ""
+
+elif [ $cVerSO == "9" ]; then
+
+  echo ""
+  echo "  Iniciando el script de instalación de Utopia Messenger para Debian 9 (Stretch)..."
+  echo ""
+
+  echo ""
+  echo "  Comandos para Debian 9 todavía no preparados. Prueba ejecutarlo en otra versión de Debian."
+  echo ""
+
+elif [ $cVerSO == "8" ]; then
+
+  echo ""
+  echo "  Iniciando el script de instalación de Utopia Messenger para Debian 8 (Jessie)..."
+  echo ""
+
+  echo ""
+  echo "  Comandos para Debian 8 todavía no preparados. Prueba ejecutarlo en otra versión de Debian."
+  echo ""
+
+elif [ $cVerSO == "7" ]; then
+
+  echo ""
+  echo "  Iniciando el script de instalación de Utopia Messenger para Debian 7 (Wheezy)..."
+  echo ""
+
+  echo ""
+  echo "  Comandos para Debian 7 todavía no preparados. Prueba ejecutarlo en otra versión de Debian."
+  echo ""
 
 fi
 
