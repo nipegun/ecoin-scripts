@@ -9,7 +9,7 @@
 # Script de NiPeGun para instalar y configurar la cadena de bloques de Chia (XCH)
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaGUI/Cryptos-Nodo-XCH-InstalarYConfigurar.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/SoftInst/ParaGUI/Nodo-XCH-InstalarYConfigurar.sh | bash
 # ----------
 
 vUsuarioNoRoot="nipegun"
