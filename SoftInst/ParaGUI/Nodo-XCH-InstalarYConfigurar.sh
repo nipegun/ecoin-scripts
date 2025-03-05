@@ -45,8 +45,8 @@ vFechaDeEjec=$(date +a%Ym%md%d@%T)
 
 menu=(dialog --checklist "Indica el tipo de instalación o actualización que quieres realizar:" 22 96 16)
   opciones=(
-    1 "Instalar o actualizar en la carpeta por defecto /opt." off
-    2 "Instalar o actualizar en la carpeta de root." off
+    1 "Instalar o actualizar en la carpeta por defecto /opt."    off
+    2 "Instalar o actualizar en la carpeta de root."             off
     3 "Instalar o actualizar en la carpeta del usuario no root." off 
   )
 choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -58,7 +58,8 @@ choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
         1)
 
           echo ""
-          echo "  Instalando o actualizando en la carpeta por defecto (/opt)..."          echo ""
+          echo "  Instalando o actualizando en la carpeta por defecto (/opt)..."
+          echo ""
 
           # Crear carpeta de descarga
             echo ""
@@ -95,7 +96,8 @@ choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
             # Comprobar si el paquete gdebi está instalado. Si no lo está, instalarlo.
             #  if [[ $(dpkg-query -s gdebi 2>/dev/null | grep installed) == "" ]]; then
             #    echo ""
-            #    echo "      El paquete gdebi no está instalado. Iniciando su instalación..."            #    echo ""
+            #    echo "      El paquete gdebi no está instalado. Iniciando su instalación..."
+            #    echo ""
             #    apt-get -y update
             #    apt-get -y install gdebi
             #    echo ""
@@ -140,7 +142,8 @@ choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
         2)
 
           echo ""
-          echo "  Instalando o actualizando en la carpeta de root...."          echo ""
+          echo "  Instalando o actualizando en la carpeta de root...."
+          echo ""
 
           # Crear carpeta de descarga
             echo ""
@@ -170,7 +173,8 @@ choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
           wget https://download.chia.net/latest/x86_64-Ubuntu-gui -O /root/SoftInst/Cryptos/XCH/chia-blockchain.deb
 
           echo ""
-          echo "    Extrayendo los archivos de dentro del paquete .deb..."          echo ""
+          echo "    Extrayendo los archivos de dentro del paquete .deb..."
+          echo ""
           # Comprobar si el paquete binutils está instalado. Si no lo está, instalarlo.
             if [[ $(dpkg-query -s binutils 2>/dev/null | grep installed) == "" ]]; then
               echo ""
@@ -183,7 +187,8 @@ choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
           ar xv /root/SoftInst/Cryptos/XCH/chia-blockchain.deb
 
           echo ""
-          echo "    Descomprimiendo el archivo data.tar.xz..."          echo ""
+          echo "    Descomprimiendo el archivo data.tar.xz..."
+          echo ""
           # Comprobar si el paquete tar está instalado. Si no lo está, instalarlo.
             if [[ $(dpkg-query -s tar 2>/dev/null | grep installed) == "" ]]; then
               echo ""
@@ -201,7 +206,8 @@ choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
         3)
 
           echo ""
-          echo "  Instalando o actualizando en la carpeta del usuario no root...."          echo ""
+          echo "  Instalando o actualizando en la carpeta del usuario no root...."
+          echo ""
 
           # Crear carpeta de descarga
             echo ""
@@ -231,7 +237,8 @@ choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
           wget https://download.chia.net/latest/x86_64-Ubuntu-gui -O /root/SoftInst/Cryptos/XCH/chia-blockchain.deb
 
           echo ""
-          echo "    Extrayendo los archivos de dentro del paquete .deb..."          echo ""
+          echo "    Extrayendo los archivos de dentro del paquete .deb..."
+          echo ""
           # Comprobar si el paquete binutils está instalado. Si no lo está, instalarlo.
             if [[ $(dpkg-query -s binutils 2>/dev/null | grep installed) == "" ]]; then
               echo ""
@@ -244,7 +251,8 @@ choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
           ar xv /root/SoftInst/Cryptos/XCH/chia-blockchain.deb
 
           echo ""
-          echo "    Descomprimiendo el archivo data.tar.xz..."          echo ""
+          echo "    Descomprimiendo el archivo data.tar.xz..."
+          echo ""
           # Comprobar si el paquete tar está instalado. Si no lo está, instalarlo.
             if [[ $(dpkg-query -s tar 2>/dev/null | grep installed) == "" ]]; then
               echo ""
@@ -259,7 +267,8 @@ choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
           # Instalar dependencias necesarias
             #echo ""
-            #echo "    Instalando dependencias necesarias..."            #echo ""
+            #echo "    Instalando dependencias necesarias..."
+            #echo ""
             #apt-get -y install libgtk-3-0
             #apt-get -y install libnotify4
             #apt-get -y install libnss3
@@ -283,7 +292,8 @@ choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
           # Crear la carpeta para el usuario no root
             #echo ""
-            #echo "    Creando la carpeta para el usuario no root..."            #echo ""
+            #echo "    Creando la carpeta para el usuario no root..."
+            #echo ""
             #mkdir -p /home/$vUsuarioNoRoot/Cryptos/XCH/ 2> /dev/null
             #rm -rf /home/$vUsuarioNoRoot/Cryptos/XCH/chia-blockchain/ 2> /dev/null
             #mv /root/SoftInst/Cryptos/XCH/usr/lib/chia-blockchain/ /home/$vUsuarioNoRoot/Cryptos/XCH/
