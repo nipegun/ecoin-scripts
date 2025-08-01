@@ -1,5 +1,9 @@
 # RustBIP39Validator
 
+Calcula todas las permutaciones BIP39 válidas de 12 palabras dadas y las guarda en un archivo
+
+## Instalación, compilación y ejecución
+
 Instalar Rust, si no está instalado:
 
 ```
