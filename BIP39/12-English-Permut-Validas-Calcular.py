@@ -52,7 +52,7 @@ if __name__ == "__main__":
     exit(1)
 
   cLongitudPermutacion = 12
-  vArchivoDeValidas = "permutaciones_validas.txt"
+  vArchivoDeValidas = "PermutacionesUsables.txt"
 
   print("[*] Generando permutaciones y validando con control de memoria...")
   fGenerarYGuardarPermutacionesValidas(aPalabras, cLongitudPermutacion, vArchivoDeValidas)
