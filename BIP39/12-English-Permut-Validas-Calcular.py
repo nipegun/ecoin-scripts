@@ -5,13 +5,9 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
-# Requisitos:
-#   sudo apt -y update; sudo apt -y install python3-pip; sudo pip3 install mnemonic --break-system-packages
-
 from itertools import permutations
 from mnemonic import Mnemonic
 from multiprocessing import Pool, cpu_count
-from functools import partial
 
 def fEsValida(vFrase):
   vValidador = Mnemonic("english")
@@ -27,8 +23,8 @@ def fGenerarYGuardarPermutacionesValidas(aPalabras, cLongitud, vArchivoSalida):
     for vResultado in vPool.imap_unordered(fEsValida, (" ".join(p) for p in vPermutaciones), chunksize=1000):
       vTotal += 1
       if vResultado:
-        vValidas += 1
         print(f"[✔] Válida: {vResultado}")
+        vValidas += 1
         vOut.write(vResultado + "\n")
 
   print(f"[✓] Validación terminada. De {vTotal} permutaciones, {vValidas} son válidas.")
@@ -36,7 +32,12 @@ def fGenerarYGuardarPermutacionesValidas(aPalabras, cLongitud, vArchivoSalida):
 
 if __name__ == "__main__":
 
-  aPalabras = ["abandon", "baby", "cabbage", "dad", "eager", "fabric", "gadget", "habit", "ice", "jacket", "kangaroo", "lab"]
+  vInput = input("Ingresa las 12 palabras separadas por espacio:\n Por ejemplo: abandon baby cabbage dad eager fabric gadget habit ice jacket kangaroo lab \n  > ").strip()
+  aPalabras = vInput.split()
+
+  if len(aPalabras) != 12:
+    print(f"[✗] Error: Se esperaban 12 palabras, pero se recibieron {len(aPalabras)}.")
+    exit(1)
 
   cLongitudPermutacion = 12
   vArchivoDeValidas = "permutaciones_validas.txt"
