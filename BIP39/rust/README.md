@@ -13,6 +13,7 @@ curl https://sh.rustup.rs -sSf | sh
 Descargar los archivos:
 
 ```
+cd /tmp
 rm -rf /tmp/RustBIP39Validator/ 2> /dev/null
 mkdir /tmp/RustBIP39Validator/
 cd /tmp/RustBIP39Validator/
