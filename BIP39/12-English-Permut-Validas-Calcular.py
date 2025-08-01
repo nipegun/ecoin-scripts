@@ -5,6 +5,9 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
+# Requisitos:
+#   sudo apt -y update; sudo apt -y install python3-pip; sudo pip3 install mnemonic --break-system-packages
+
 from itertools import permutations, islice
 from mnemonic import Mnemonic
 from multiprocessing import Pool, cpu_count
