@@ -5,7 +5,8 @@ Instalar Rust, si no está instalado:
 ```
 curl https://sh.rustup.rs -sSf | sh
 ```
-.
+
+Descargar los archivos:
 
 ```
 mkdir /tmp/RustBIP39Validator/
@@ -16,8 +17,15 @@ curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main
 cd /tmp/RustBIP39Validator/
 ```
 
-Compilar
+Compilar:
 
 ```
 cargo build --release
 ```
+
+Ejecutar:
+
+```
+./target/release/validador_bip39
+```
+
