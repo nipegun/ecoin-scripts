@@ -44,7 +44,7 @@ def fGenerarYGuardarPermutacionesValidas(aPalabras, cLongitud, vArchivoSalida, c
 
 if __name__ == "__main__":
 
-  vInput = input("Ingrese las 12 palabras separadas por espacio:\n  Por ejemplo: abandon baby cabbage dad eager fabric gadget habit ice jacket kangaroo lab \n  > ").strip()
+  vInput = input("  Ingrese las 12 palabras separadas por espacio:\n  Por ejemplo: abandon baby cabbage dad eager fabric gadget habit ice jacket kangaroo lab \n  > ").strip()
   aPalabras = vInput.split()
 
   if len(aPalabras) != 12:
