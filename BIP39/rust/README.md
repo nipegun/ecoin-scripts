@@ -13,6 +13,7 @@ curl https://sh.rustup.rs -sSf | sh
 Descargar los archivos:
 
 ```
+rm -rf /tmp/RustBIP39Validator/ 2> /dev/null
 mkdir /tmp/RustBIP39Validator/
 cd /tmp/RustBIP39Validator/
 curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/BIP39/rust/Cargo.toml -O
