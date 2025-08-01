@@ -57,7 +57,7 @@ fn main() {
         *t += 1;
       }
       if Mnemonic::parse_in_normalized(Language::English, &frase).is_ok() {
-        println!("[✔] Válida: {}", frase);
+        // println!("[✔] Válida: {}", frase);
         let mut w = writer.lock().unwrap();
         writeln!(w, "{}", frase).unwrap();
         let mut v = validas.lock().unwrap();
