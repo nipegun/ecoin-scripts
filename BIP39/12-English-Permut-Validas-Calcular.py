@@ -28,6 +28,7 @@ def fGenerarYGuardarPermutacionesValidas(aPalabras, cLongitud, vArchivoSalida):
       vTotal += 1
       if vResultado:
         vValidas += 1
+        print(f"[✔] Válida: {vResultado}")
         vOut.write(vResultado + "\n")
 
   print(f"[✓] Validación terminada. De {vTotal} permutaciones, {vValidas} son válidas.")
