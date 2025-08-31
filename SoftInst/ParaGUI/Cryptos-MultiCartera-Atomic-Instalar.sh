@@ -8,7 +8,7 @@
 # ----------
 # Script de NiPeGun para instalar y configurar Atomic en Debian
 #
-# Ejecución remota:
+# Ejecución remota (puede requerir permisos sudo):
 #  curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaGUI/Cryptos-MultiCartera-Atomic-Instalar.sh | bash
 #
 # Ejecución remota sin caché:
@@ -64,45 +64,67 @@ cFinColor='\033[0m'
       cVerSO=$(uname -r)
   fi
 
-if [ $cVerSO == "7" ]; then
+if [ $cVerSO == "13" ]; then
 
   echo ""
-  echo -e "${ColorAzulClaro}Iniciando el script de instalación de Atomic para Debian 7 (Wheezy)...${cFinColor}"
+  echo -e "${ColorAzulClaro}Iniciando el script de instalación de Atomic para Debian 13 (x)...${cFinColor}"
   echo ""
 
-  echo ""
-  echo -e "${cColorRojo}  Comandos para Debian 7 todavía no preparados. Prueba ejecutarlo en otra versión de Debian.${cFinColor}"
-  echo ""
+  # Borrar archivos previos
+    rm -f /tmp/AtomicWallet.deb
 
-elif [ $cVerSO == "8" ]; then
+  # Determinar URL de descarga del archivo comprimido
+    echo ""
+    echo "    Determinando la URL de descarga del archivo de instalación de Atomic Wallet..."
+    echo ""
+    vURLArchivo=$(curl -sL https://get.atomicwallet.io/download/latest-debian.txt)
+    echo ""
+    echo "      La URL de descarga del archivo es: $vURLArchivo"
+    echo ""
 
-  echo ""
-  echo -e "${ColorAzulClaro}Iniciando el script de instalación de Atomic para Debian 8 (Jessie)...${cFinColor}"
-  echo ""
+  # Descargar archivo .deb
+    echo ""
+    echo "    Descargando el archivo .deb..."
+    echo ""
+    curl -sL $vURLArchivo --output /tmp/AtomicWallet.deb
 
-  echo ""
-  echo -e "${cColorRojo}  Comandos para Debian 8 todavía no preparados. Prueba ejecutarlo en otra versión de Debian.${cFinColor}"
-  echo ""
+  # Instalar el archivo .deb
+    echo ""
+    echo "    Instalando el archivo .deb..."
+    echo ""
+    sudo apt -y install /tmp/AtomicWallet.deb
+    sudo sed -i -e 's|Categories=Utility;|Categories=Cryptos;|g' /usr/share/applications/atomic.desktop
 
-elif [ $cVerSO == "9" ]; then
-
-  echo ""
-  echo -e "${ColorAzulClaro}Iniciando el script de instalación de Atomic para Debian 9 (Stretch)...${cFinColor}"
-  echo ""
-
-  echo ""
-  echo -e "${cColorRojo}  Comandos para Debian 9 todavía no preparados. Prueba ejecutarlo en otra versión de Debian.${cFinColor}"
-  echo ""
-
-elif [ $cVerSO == "10" ]; then
-
-  echo ""
-  echo -e "${ColorAzulClaro}Iniciando el script de instalación de Atomic para Debian 10 (Buster)...${cFinColor}"
-  echo ""
+elif [ $cVerSO == "12" ]; then
 
   echo ""
-  echo -e "${cColorRojo}  Comandos para Debian 10 todavía no preparados. Prueba ejecutarlo en otra versión de Debian.${cFinColor}"
+  echo -e "${ColorAzulClaro}  Iniciando el script de instalación de Atomic para Debian 12 (Bookworm)...${cFinColor}"
   echo ""
+
+  # Borrar archivos previos
+    rm -f /tmp/AtomicWallet.deb
+
+  # Determinar URL de descarga del archivo comprimido
+    echo ""
+    echo "    Determinando la URL de descarga del archivo de instalación de Atomic Wallet..."
+    echo ""
+    vURLArchivo=$(curl -sL https://get.atomicwallet.io/download/latest-debian.txt)
+    echo ""
+    echo "      La URL de descarga del archivo es: $vURLArchivo"
+    echo ""
+
+  # Descargar archivo .deb
+    echo ""
+    echo "    Descargando el archivo .deb..."
+    echo ""
+    curl -sL $vURLArchivo --output /tmp/AtomicWallet.deb
+
+  # Instalar el archivo .deb
+    echo ""
+    echo "    Instalando el archivo .deb..."
+    echo ""
+    sudo apt -y install /tmp/AtomicWallet.deb
+    sudo sed -i -e 's|Categories=Utility;|Categories=Cryptos;|g' /usr/share/applications/atomic.desktop
 
 elif [ $cVerSO == "11" ]; then
 
@@ -200,37 +222,44 @@ elif [ $cVerSO == "11" ]; then
     chown root:root /home/$vUsuarioNoRoot/Atomic/chrome-sandbox
     chmod 4755      /home/$vUsuarioNoRoot/Atomic/chrome-sandbox
 
-elif [ $cVerSO == "12" ]; then
+elif [ $cVerSO == "10" ]; then
 
   echo ""
-  echo -e "${ColorAzulClaro}  Iniciando el script de instalación de Atomic para Debian 12 (Bookworm)...${cFinColor}"
+  echo -e "${ColorAzulClaro}Iniciando el script de instalación de Atomic para Debian 10 (Buster)...${cFinColor}"
   echo ""
 
-  # Borrar archivos previos
-    rm -rf /root/SoftInst/AtomicWallet/
-    rm -rf /home/$vUsuarioNoRoot/Atomic/
+  echo ""
+  echo -e "${cColorRojo}  Comandos para Debian 10 todavía no preparados. Prueba ejecutarlo en otra versión de Debian.${cFinColor}"
+  echo ""
 
-  # Determinar URL de descarga del archivo comprimido
-    echo ""
-    echo "    Determinando la URL de descarga del archivo de instalación de Atomic Wallet..."
-    echo ""
-    vURLArchivo=$(curl -sL https://get.atomicwallet.io/download/latest-debian.txt)
-    echo ""
-    echo "      La URL de descarga del archivo es: $vURLArchivo"
-    echo ""
+elif [ $cVerSO == "9" ]; then
 
-  # Descargar archivo .deb
-    echo ""
-    echo "    Descargando el archivo .deb..."
-    echo ""
-    mkdir -p /root/SoftInst/AtomicWallet 2> /dev/null
-    curl -sL $vURLArchivo --output /root/SoftInst/AtomicWallet/AtomicWallet.deb
+  echo ""
+  echo -e "${ColorAzulClaro}Iniciando el script de instalación de Atomic para Debian 9 (Stretch)...${cFinColor}"
+  echo ""
 
-  # Instalar el archivo .deb
-    echo ""
-    echo "    Instalando el archivo .deb..."
-    echo ""
-    apt -y install /root/SoftInst/AtomicWallet/AtomicWallet.deb
-    sed -i -e 's|Categories=Utility;|Categories=Cryptos;|g' /usr/share/applications/atomic.desktop
+  echo ""
+  echo -e "${cColorRojo}  Comandos para Debian 9 todavía no preparados. Prueba ejecutarlo en otra versión de Debian.${cFinColor}"
+  echo ""
+
+elif [ $cVerSO == "8" ]; then
+
+  echo ""
+  echo -e "${ColorAzulClaro}Iniciando el script de instalación de Atomic para Debian 8 (Jessie)...${cFinColor}"
+  echo ""
+
+  echo ""
+  echo -e "${cColorRojo}  Comandos para Debian 8 todavía no preparados. Prueba ejecutarlo en otra versión de Debian.${cFinColor}"
+  echo ""
+
+elif [ $cVerSO == "7" ]; then
+
+  echo ""
+  echo -e "${ColorAzulClaro}Iniciando el script de instalación de Atomic para Debian 7 (Wheezy)...${cFinColor}"
+  echo ""
+
+  echo ""
+  echo -e "${cColorRojo}  Comandos para Debian 7 todavía no preparados. Prueba ejecutarlo en otra versión de Debian.${cFinColor}"
+  echo ""
 
 fi
