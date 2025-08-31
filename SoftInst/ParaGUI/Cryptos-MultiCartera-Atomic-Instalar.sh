@@ -29,16 +29,6 @@ cColorVerde='\033[1;32m'
 cColorRojo='\033[1;31m'
 cFinColor='\033[0m'
 
-# Comprobar si el paquete curl está instalado. Si no lo está, instalarlo.
-  if [[ $(dpkg-query -s curl 2>/dev/null | grep installed) == "" ]]; then
-    echo ""
-    echo -e "${cColorRojo}  curl no está instalado. Iniciando su instalación...${cFinColor}"
-    echo ""
-    sudo apt-get -y update > /dev/null
-    sudo apt-get -y install curl
-    echo ""
-  fi
-
 # Determinar la versión de Debian
   if [ -f /etc/os-release ]; then
     # Para systemd y freedesktop.org
@@ -67,16 +57,25 @@ cFinColor='\033[0m'
 if [ $cVerSO == "13" ]; then
 
   echo ""
-  echo -e "${ColorAzulClaro}Iniciando el script de instalación de Atomic para Debian 13 (x)...${cFinColor}"
+  echo -e "${ColorAzulClaro}  Iniciando el script de instalación de Atomic para Debian 13 (x)...${cFinColor}"
   echo ""
 
   # Borrar archivos previos
-    rm -f /tmp/AtomicWallet.deb
+    rm -f /tmp/AtomicWallet.deb 2> /dev/null
 
   # Determinar URL de descarga del archivo comprimido
     echo ""
     echo "    Determinando la URL de descarga del archivo de instalación de Atomic Wallet..."
     echo ""
+    # Comprobar si el paquete curl está instalado. Si no lo está, instalarlo.
+      if [[ $(dpkg-query -s curl 2>/dev/null | grep installed) == "" ]]; then
+        echo ""
+        echo -e "${cColorRojo}  curl no está instalado. Iniciando su instalación...${cFinColor}"
+        echo ""
+        sudo apt-get -y update > /dev/null
+        sudo apt-get -y install curl
+        echo ""
+      fi
     vURLArchivo=$(curl -sL https://get.atomicwallet.io/download/latest-debian.txt)
     echo ""
     echo "      La URL de descarga del archivo es: $vURLArchivo"
