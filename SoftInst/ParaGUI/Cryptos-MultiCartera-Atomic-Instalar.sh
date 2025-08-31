@@ -9,10 +9,10 @@
 # Script de NiPeGun para instalar y configurar Atomic en Debian
 #
 # Ejecución remota (puede requerir permisos sudo):
-#  curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaGUI/Cryptos-MultiCartera-Atomic-Instalar.sh | bash
+#  curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/SoftInst/ParaGUI/Cryptos-MultiCartera-Atomic-Instalar.sh | bash
 #
-# Ejecución remota sin caché:
-#  curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaGUI/Cryptos-MultiCartera-Atomic-Instalar.sh | bash
+# Ejecución remota como root (para sistemas sin sudo):
+#  curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/SoftInst/ParaGUI/Cryptos-MultiCartera-Atomic-Instalar.sh | sed 's-sudo--g' | bash
 # ----------
 
 vUsuarioNoRoot="nipegun"
