@@ -11,42 +11,40 @@
 # El objetivo de este script es demostrar que la randomización no es tan aleatoria y, por tanto, BTC es inseguro.
 #
 # Ejecución remota (puede requerir permisos sudo):
-#   curl -sL x | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/BIP39/bash/Electrum-CrearCarteraYComprobarBalance.sh | bash
 #
 # Ejecución remota como root (para sistemas sin sudo):
-#   curl -sL x | sed 's-sudo--g' | bash
-#
-# Ejecución remota sin caché:
-#   curl -sL -H 'Cache-Control: no-cache, no-store' x | bash
-#
-# Ejecución remota con parámetros:
-#   curl -sL x | bash -s Parámetro1 Parámetro2
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/BIP39/bash/Electrum-CrearCarteraYComprobarBalance.sh | sed 's-sudo--g' | bash
 #
 # Bajar y editar directamente el archivo en nano
-#   curl -sL x | nano -
+#   curl -sL https://raw.githubusercontent.com/nipegun/ecoin-scripts/refs/heads/main/BIP39/bash/Electrum-CrearCarteraYComprobarBalance.sh | nano -
 # ----------
 
 # Definir variables
   vRutaACarpetaDeCarteras="/mnt/c/Carteras" # Sin / final
 
-while true; do
-  # Fecha/hora única para cada wallet
-  vFechaDeEjec=$(date +a%Ym%md%d@%T)
+# Correr el bucle hasta encontrar balance distinto de cero
+  while true; do
 
-  # Crear y cargar cartera
-  ./run_electrum -w "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet create
-  ./run_electrum -w "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet load_wallet
+    # Fecha/hora única para cada wallet
+    vFechaDeEjec=$(date +a%Ym%md%d@%T)
 
-  # Comprobar balance
-  vBalance=$(./run_electrum -w "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet getbalance | jq -r '.confirmed')
-  vSeed=$(cat "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet | jq -r '.keystore.seed')
+    # Crear y cargar cartera
+    ./run_electrum -w "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet create
+    ./run_electrum -w "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet load_wallet
 
-  if [[ "$vBalance" -eq 0 ]]; then
-    mv -f "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet "$vRutaACarpetaDeCarteras"/0-"$vSeed".wallet
-  else
-    mv -f "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet "$vRutaACarpetaDeCarteras"/"$vBalance"-"$vSeed".wallet
-    break
-  fi
+    # Comprobar balance
+    vBalance=$(./run_electrum -w "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet getbalance | jq -r '.confirmed')
+    vSeed=$(cat "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet | jq -r '.keystore.seed')
 
-  #sleep 1 # Pausa para no saturar CPU
-done
+    if [[ "$vBalance" -eq 0 ]]; then
+      mv -f "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet "$vRutaACarpetaDeCarteras"/0-"$vSeed".wallet
+    else
+      mv -f "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet "$vRutaACarpetaDeCarteras"/"$vBalance"-"$vSeed".wallet
+      break
+    fi
+
+    #sleep 1 # Pausa para no saturar CPU
+
+  done
+
