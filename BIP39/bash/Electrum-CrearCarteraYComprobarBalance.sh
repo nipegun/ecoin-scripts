@@ -49,7 +49,7 @@
   while true; do
 
     # Fecha/hora única para cada wallet
-    vFechaDeEjec=$(date +a%Ym%md%d@%T)
+    vFechaDeEjec=$(date +a%Ym%md%d@%Hh%Mm%Ss)
 
     # Crear y cargar cartera
     ./run_electrum -w "$vRutaACarpetaDeCarteras"/"$vFechaDeEjec".wallet create
